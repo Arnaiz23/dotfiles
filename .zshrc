@@ -1,5 +1,8 @@
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Reload theme
+source $ZSH/oh-my-zsh.sh
+
 plugins=(
   git common-aliases colored-man-pages zsh-autosuggestions zsh-syntax-highlighting
 )
