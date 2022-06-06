@@ -18,5 +18,5 @@ If you don't have a non-root user with sudo privileges, create it before run thi
 	
 	adduser arnaiz --quiet
 	usermod -aG sudo arnaiz
-	apt update -y && apt-install -y sudo git
+	apt update -y && apt install -y sudo git
 	su arnaiz
