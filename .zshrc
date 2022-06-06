@@ -4,8 +4,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 source $ZSH/oh-my-zsh.sh
 
 plugins=(
-  git common-aliases colored-man-pages zsh-autosuggestions zsh-syntax-highlighting
+  git common-aliases colored-man-pages
 )
+
+# Load the plugins
+source /usr/share/zgen/zgen.zsh
+zgen load zsh-users/zsh-syntax-highlighting
+zgen load zsh-users/zsh-autosuggestions
+zgen load zsh-users/zsh-completions
 
 export PAGER="less"
 
