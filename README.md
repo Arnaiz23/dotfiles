@@ -4,6 +4,17 @@ This configuration of the Linux terminal is 100% personal.
 
 ## Includes
 
+- Shell: ZSH + OH-MY-ZSH + Powerlevel10k theme
+- Plugins: Zgen
+- Essentials tools: wget + git
+- CLI Editors: vim + nano
+- CLI tools: jq
+- API/Request tools: curl + http
+- Help/Info: man + tldr + neofetch
+- Fun: lolcat
+- Compressors/conversors: unzip + zip
+- Package Managers: Node/NVM/PNPM
+- Containers: Docker
 
 ## Installation
 	
