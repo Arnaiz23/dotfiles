@@ -15,7 +15,7 @@ sudo apt-get upgrade -y
 sudo apt-get install -y \
 	sudo vim nano git bat zsh wget curl lsb-release \
 	jq less catimg tldr man neofetch htop unzip zip \
-	exa lolcat gpg locate zgen
+	exa lolcat gpg locate zgen net-tools
 
 # Fix batcat -> cat (Debian)
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
