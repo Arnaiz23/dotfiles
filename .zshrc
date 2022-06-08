@@ -12,6 +12,7 @@ source /usr/share/zgen/zgen.zsh
 zgen load zsh-users/zsh-syntax-highlighting
 zgen load zsh-users/zsh-autosuggestions
 zgen load zsh-users/zsh-completions
+zgen oh-my-zsh plugins/sudo
 
 export PAGER="less"
 
@@ -28,4 +29,4 @@ alias grep="grep --color"
 alias cat="bat"
 alias gitlog="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
 
-echo "$(cat $HOME/.dotfiles/banner)" | lolcat
+#echo "$(cat $HOME/.dotfiles/banner)" | lolcat
