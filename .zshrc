@@ -8,7 +8,7 @@ plugins=(
 )
 
 # Load the plugins
-source /usr/share/zgen/zgen.zsh
+source "${HOME}/.zgen/zgen.zsh"
 zgen load zsh-users/zsh-syntax-highlighting
 zgen load zsh-users/zsh-autosuggestions
 zgen load zsh-users/zsh-completions
@@ -28,5 +28,9 @@ alias ls="exa --icons"
 alias grep="grep --color"
 alias cat="bat"
 alias gitlog="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+alias gc="git commit"
+alias gpo="git push origin"
+alias v="nvim"
 
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
+#echo "ArchFade" | lolcat
