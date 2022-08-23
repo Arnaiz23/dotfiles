@@ -44,11 +44,12 @@ nvm install --lts
 
 # Modify vim/nvim
 
-git clone https://github.com/Arnaiz23/Vim.git >> .vimconfigure
-cp .vimconfigure/.vimrc ~/.vimrc
+# Copy the vimrc for vim and nvim
+cp ~/.dotfiles/.vimrc ~/
 
+# Create and copy the configuration for nvim
 mkdir ~/.config/nvim
-cp .vimconfigure/init.vim ~/.config/nvim/
+cp ~/.dotfiles/init.vim ~/.config/nvim/
 
 # powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
