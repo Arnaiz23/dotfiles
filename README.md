@@ -1,6 +1,6 @@
 # Dotfiles of Adrián Arnaiz
 
-This configuration of the Linux terminal is 100% personal.
+This is the configuration of the Linux terminal. 
 
 ## Includes
 
@@ -31,3 +31,28 @@ If you don't have a non-root user with sudo privileges, create it before run thi
 	usermod -aG sudo arnaiz
 	apt update -y && apt install -y sudo git
 	su arnaiz
+
+## Structure of repository
+
+- .tmux.conf -> Configuration of tmux
+- .vimrc -> Global configurations of Vim and Neovim
+- .zshrc -> Configuration of zsh
+- coc.vim -> Configuration of the coc extension
+- init.vim -> Configuration of neovim
+- install.sh -> Script of the installer
+
+## Neovim / Vim
+
+Configuration of neovim
+
+- Vim-plug -> Installer of vim plugins
+
+## Coc extensions
+
+- coc-html # Extension para html
+- coc-eslint # Extension para eslint
+- coc-tsserver # Extension para JS y TS
+- coc-json # Extension para json
+- coc-docker # Extension para Dockerfile
+- coc-css # Extension para CSS
+

@@ -9,15 +9,10 @@ Plug 'joshdick/onedark.vim' " theme One dark pro
 Plug 'scrooloose/nerdtree' " Arbol de ficheros
 Plug 'maximbaz/lightline-ale' " Linea inferior
 Plug 'itchyny/lightline.vim'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'  " Temas para airline
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Shougo/neco-syntax'  " Fuente general de auto completado
 Plug 'sheerun/vim-polyglot' " Resaltado de sintaxis
 Plug 'jiangmiao/auto-pairs' " Autocompletado parentesis etc
 Plug 'alvan/vim-closetag' " Cierre automatico de etiquetas
-"Plug 'sirver/ultisnips' " Snippets
-"Plug 'neoclide/coc.nvim', {'branch' : 'release'} "Autocompletado
+Plug 'neoclide/coc.nvim', {'branch' : 'release'} "Autocompletado
 Plug 'dense-analysis/ale' " Prettier al guardar
 
 call plug#end()
@@ -60,3 +55,10 @@ let g:ale_fixers = {
 let g:ale_linters_explicit = 1
 
 let g:ale_fix_on_save = 1
+
+" Personal shortcuts
+let mapleader = ","
+noremap <leader>w :w<cr>
+
+" source coc
+source ~/.config/nvim/coc.vim
