@@ -15,7 +15,7 @@ sudo pacman -S \
 	sudo vim nano git bat zsh wget curl lsb-release \
 	jq less catimg tldr man neofetch htop unzip zip \
 	exa lolcat gpg locate zgen net-tools nmap ncal \
-	neovim docker libxcrypt-compat
+	neovim docker libxcrypt-compat tmux
 
 # Fix batcat -> cat (Debian)
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
@@ -50,6 +50,11 @@ cp ~/.dotfiles/.vimrc ~/
 # Create and copy the configuration for nvim
 mkdir -p ~/.config/nvim
 cp ~/.dotfiles/init.vim ~/.config/nvim/
+
+# Configuration of TMUX
+cp ~/.dotfiles/.tmux.conf ~/
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source-file ~/.tmux.conf
 
 # Install vim-plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
