@@ -45,14 +45,14 @@ nvm install --lts
 # Modify vim/nvim
 
 # Copy the vimrc for vim and nvim
-cp ~/.dotfiles/.vimrc ~/
+ln -s ~/.dotfiles/.vimrc ~/.vimrc
 
 # Create and copy the configuration for nvim
 mkdir -p ~/.config/nvim
-cp ~/.dotfiles/init.vim ~/.config/nvim/
+ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 
 # Configuration of TMUX
-cp ~/.dotfiles/.tmux.conf ~/
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux source-file ~/.tmux.conf
 
