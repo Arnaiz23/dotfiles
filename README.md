@@ -56,3 +56,12 @@ Configuration of neovim
 - coc-docker # Extension para Dockerfile
 - coc-css # Extension para CSS
 
+## Another instructions
+
+- Clone the repository
+- Execute the script
+- For neovim:
+	- Execute v and :PlugInstall
+	- Later, execute :CocInstall
+- For tmux:
+	- Execute tmux, Ctrl + r and Ctrl + I
