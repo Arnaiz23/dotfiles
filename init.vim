@@ -15,6 +15,10 @@ Plug 'alvan/vim-closetag' " Cierre automatico de etiquetas
 Plug 'neoclide/coc.nvim', {'branch' : 'release'} "Autocompletado
 Plug 'dense-analysis/ale' " Prettier al guardar
 
+" Buscador de files
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 " Luego de esta línea puedes agregar tus configuraciones y mappings
@@ -59,6 +63,11 @@ let g:ale_fix_on_save = 1
 " Personal shortcuts
 let mapleader = ","
 noremap <leader>w :w<cr>
+noremap <leader>F :Files<cr>
+noremap <leader>q :q<cr>
 
 " source coc
 source ~/.dotfiles/coc.vim
+
+" Delete errors
+ let g:coc_disable_startup_warning = 1
