@@ -28,6 +28,7 @@ colorscheme onedark  " Activa tema onedark
 
 
 let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
+let g:NERDTreeQuitOnOpen=1 " Cierra el tree al seleccionar una opcion
 " Abrir/cerrar NERDTree con F2
 map <F2> :NERDTreeToggle<CR>
 
