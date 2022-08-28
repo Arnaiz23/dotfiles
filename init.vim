@@ -66,6 +66,7 @@ noremap <leader>w :w<cr>
 noremap <leader>F :Files<cr>
 noremap <leader>q :q<cr>
 noremap <leader>m :Maps<cr>
+noremap <leader>Q :wq<cr>
 
 " source coc
 source ~/.dotfiles/coc.vim

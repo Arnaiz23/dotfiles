@@ -47,6 +47,10 @@ Configuration of neovim
 
 - Vim-plug -> Installer of vim plugins
 
+## Coc Config
+
+- Copy the coc-settings.json in the :CocConfig
+
 ## Coc extensions
 
 - coc-html # Extension para html
