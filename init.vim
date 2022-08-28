@@ -65,6 +65,7 @@ let mapleader = ","
 noremap <leader>w :w<cr>
 noremap <leader>F :Files<cr>
 noremap <leader>q :q<cr>
+noremap <leader>m :Maps<cr>
 
 " source coc
 source ~/.dotfiles/coc.vim
