@@ -19,6 +19,9 @@ Plug 'dense-analysis/ale' " Prettier al guardar
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Iconos
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 " Luego de esta línea puedes agregar tus configuraciones y mappings
