@@ -23,7 +23,7 @@ export NVM_DIR=$HOME/.nvm
 
 # Aliases
 
-alias tree="exa --icons --tree -L 1 -I node_modules"
+alias treel="exa --icons --tree -L 1 -I node_modules"
 alias ls="exa --icons"
 alias grep="grep --color"
 alias cat="bat"

@@ -72,6 +72,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "s", lazy.spawn("scrot")),
     ([mod, "shift"], "s", lazy.spawn("scrot -s")),
 
+    # Emojis
+    ([mod], "g", lazy.spawn("emoji-picker")),
+
     # ------------ Hardware Configs ------------
 
     # Volume
