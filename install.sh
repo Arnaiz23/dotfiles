@@ -15,7 +15,7 @@ sudo pacman -S \
 	sudo vim nano git bat zsh wget curl lsb-release \
 	jq less catimg tldr man neofetch htop unzip zip \
 	exa lolcat gpg locate zgen net-tools nmap ncal \
-	neovim docker libxcrypt-compat tmux
+	neovim docker libxcrypt-compat tmux rofi alacritty redshift
 
 # Fix batcat -> cat (Debian)
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
