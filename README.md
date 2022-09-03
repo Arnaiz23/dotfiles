@@ -40,6 +40,8 @@ If you don't have a non-root user with sudo privileges, create it before run thi
 - coc.vim -> Configuration of the coc extension
 - init.vim -> Configuration of neovim
 - install.sh -> Script of the installer
+- alacritty -> folder with the alacritty configuration
+- qtile -> folder with the qtile configuration
 
 ## Neovim / Vim
 
