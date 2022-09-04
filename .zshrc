@@ -31,6 +31,7 @@ alias gitlog="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %
 alias gc="git commit"
 alias gpo="git push origin"
 alias v="nvim"
+alias py="python3"
 
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat

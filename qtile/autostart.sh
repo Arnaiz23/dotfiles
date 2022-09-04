@@ -10,4 +10,4 @@ volumeicon &
 
 # Prueba keyring
 # Si no funciona:
-gnome-keyring-daemon
+gnome-keyring-daemon --start
