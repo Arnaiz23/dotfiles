@@ -22,6 +22,12 @@ Plug 'junegunn/fzf.vim'
 " Iconos
 Plug 'ryanoasis/vim-devicons'
 
+"
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
+
+Plug 'nvim-telescope/telescope-file-browser.nvim'
+
 call plug#end()
 
 " Luego de esta línea puedes agregar tus configuraciones y mappings
@@ -56,14 +62,14 @@ augroup END
 " ALE configuration
 
 let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\   'css': ['prettier'],
-\}
+      \   'javascript': ['prettier'],
+      \   'css': ['prettier'],
+      \}
 
 let g:ale_linters_explicit = 1
 
 let g:ale_fix_on_save = 1
-
+ 
 " Personal shortcuts
 let mapleader = ","
 noremap <leader>w :w<cr>
@@ -73,9 +79,32 @@ noremap <leader>Q :wq<cr>
 noremap <leader>t :tabnew<cr>
 noremap <leader>e :e 
 noremap <leader>g :% s/
+noremap <leader>i gg=G<C-o><C-o>
+map <F3> :Telescope file_browser<cr>
 
 " source coc
-source ~/.dotfiles/coc.vim
+source ~/.dotfiles/nvim/coc.vim
 
 " Delete errors
- let g:coc_disable_startup_warning = 1
+let g:coc_disable_startup_warning = 1
+
+lua << EOF
+local fb_actions = require "telescope".extensions.file_browser.actions
+require("telescope").setup {
+  extensions = {
+    file_browser = {
+      theme = "ivy",
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+					["<C-a>"] = fb_actions.create
+        },
+      },
+    },
+  },
+}
+require("telescope").load_extension "file_browser"
+EOF

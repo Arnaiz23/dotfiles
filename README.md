@@ -17,20 +17,20 @@ This is the configuration of the Linux terminal.
 - Containers: Docker
 
 ## Installation
-	
-	git clone https://github.com/arnaiz23/dotfiles ~/.dotfiles
-	cd dotfiles
-	sh install.sh
-	nvm install --lts (or other version)
+
+git clone https://github.com/arnaiz23/dotfiles ~/.dotfiles
+cd dotfiles
+sh install.sh
+nvm install --lts (or other version)
 
 ## Requisites
 
 If you don't have a non-root user with sudo privileges, create it before run this script:
-	
-	adduser arnaiz --quiet
-	usermod -aG sudo arnaiz
-	apt update -y && apt install -y sudo git
-	su arnaiz
+
+adduser arnaiz --quiet
+usermod -aG sudo arnaiz
+apt update -y && apt install -y sudo git
+su arnaiz
 
 ## Structure of repository
 
@@ -71,3 +71,13 @@ Configuration of neovim
 	- Later, execute :CocInstall
 - For tmux:
 	- Execute tmux, Ctrl + r and Ctrl + I
+
+
+## Configurations
+
+### TMUX
+
+- Ctrl-Space -> leader
+- Ctrl-Space [ -> enter in copy mode
+	- vi keys move
+- leader + ? -> help commands

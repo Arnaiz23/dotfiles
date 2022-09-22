@@ -22,4 +22,3 @@ set sw=2
 set laststatus=2
 " ocultar el modo
 " set noshowmode
-
