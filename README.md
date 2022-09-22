@@ -35,10 +35,11 @@ su arnaiz
 ## Structure of repository
 
 - .tmux.conf -> Configuration of tmux
-- .vimrc -> Global configurations of Vim and Neovim
+- nvim -> Folder with nvim configuration
+	- .vimrc -> Global configurations of Vim and Neovim
+	- coc.vim -> Configuration of the coc extension
+	- init.vim -> Configuration of neovim
 - .zshrc -> Configuration of zsh
-- coc.vim -> Configuration of the coc extension
-- init.vim -> Configuration of neovim
 - install.sh -> Script of the installer
 - alacritty -> folder with the alacritty configuration
 - qtile -> folder with the qtile configuration
@@ -72,8 +73,11 @@ Configuration of neovim
 - For tmux:
 	- Execute tmux, Ctrl + r and Ctrl + I
 
-
 ## Configurations
+
+### QTILE
+
+If I want, I can to copy one theme and create my own style changing the colors
 
 ### TMUX
 
