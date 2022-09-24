@@ -32,6 +32,7 @@ alias gc="git commit"
 alias gpo="git push origin"
 alias v="nvim"
 alias py="python3"
+alias cz="git-cz"
 
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
