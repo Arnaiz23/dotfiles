@@ -5,5 +5,13 @@
  "diagnostic.virtualTextCurrentLineOnly": false,
  "diagnostic.virtualTextPrefix": "->",
  "typescript.suggest.autoImports": true,
- "javascript.suggest.autoImports": true
+ "javascript.suggest.autoImports": true,
+ "tailwindCSS.trace.server": "off",
+ "tailwindCSS.emmetCompletions": true,
+ "tailwindCSS.jsLanguages": [
+ 	"javascript",
+ 	"javascriptreact",
+ 	"reason",
+ 	"typescriptreact"
+ ]
 }

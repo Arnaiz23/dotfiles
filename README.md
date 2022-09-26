@@ -62,6 +62,7 @@ Configuration of neovim
 - coc-json # Extension para json
 - coc-docker # Extension para Dockerfile
 - coc-css # Extension para CSS
+- @yaegassy/coc-tailwindcss3 # Extension para TailwindCSS
 
 ## Another instructions
 
