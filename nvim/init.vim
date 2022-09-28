@@ -81,6 +81,7 @@ noremap <leader>e :e
 noremap <leader>g :% s/
 noremap <leader>i gg=G<C-o><C-o>
 map <F3> :Telescope file_browser<cr>
+noremap <leader>p :Telescope find_files<cr>
 
 " source coc
 source ~/.dotfiles/nvim/coc.vim

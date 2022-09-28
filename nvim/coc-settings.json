@@ -13,5 +13,6 @@
  	"javascriptreact",
  	"reason",
  	"typescriptreact"
- ]
+ ],
+ "coc.preferences.formatOnSaveFiletypes": ["html", "css", "javascript", "javascriptreact", "markdown"]
 }
