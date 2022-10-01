@@ -76,7 +76,7 @@ noremap <leader>w :w<cr>
 noremap <leader>F :Files<cr>
 noremap <leader>m :Maps<cr>
 noremap <leader>Q :wq<cr>
-noremap <leader>t :tabnew<cr>
+noremap <leader>t :tabnew<cr>:Telescope find_files<cr>
 noremap <leader>e :e 
 noremap <leader>g :% s/
 noremap <leader>i gg=G<C-o><C-o>
