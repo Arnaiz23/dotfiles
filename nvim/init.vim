@@ -7,8 +7,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-surround'  " Es buena idea agregar una descripción del plugin
 Plug 'joshdick/onedark.vim' " theme One dark pro
 Plug 'scrooloose/nerdtree' " Arbol de ficheros
-Plug 'maximbaz/lightline-ale' " Linea inferior
-Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot' " Resaltado de sintaxis
 Plug 'jiangmiao/auto-pairs' " Autocompletado parentesis etc
 Plug 'alvan/vim-closetag' " Cierre automatico de etiquetas
@@ -22,11 +20,16 @@ Plug 'junegunn/fzf.vim'
 " Iconos
 Plug 'ryanoasis/vim-devicons'
 
-"
+" Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
-
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+
+" Inferior line better
+Plug 'nvim-lualine/lualine.nvim'
+
+" Izquierda git colores
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 
 call plug#end()
 
@@ -69,7 +72,7 @@ let g:ale_fixers = {
 let g:ale_linters_explicit = 1
 
 let g:ale_fix_on_save = 1
- 
+
 " Personal shortcuts
 let mapleader = ","
 noremap <leader>w :w<cr>
@@ -99,13 +102,104 @@ require("telescope").setup {
       mappings = {
         ["i"] = {
           -- your custom insert mode mappings
-        },
+          },
         ["n"] = {
-					["<C-a>"] = fb_actions.create
+          ["<C-a>"] = fb_actions.create
+          },
         },
       },
     },
-  },
-}
+  }
 require("telescope").load_extension "file_browser"
 EOF
+
+" Inferior line lualine
+lua << END
+
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+      },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+      }
+    },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+    },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+    },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+  }
+END
+
+" bufferline
+set termguicolors
+lua << EOF
+require('bufferline').setup {
+  options = {
+    mode = "tabs",
+    numbers = "ordinal",
+    buffer_close_icon = '',
+    modified_icon = '●',
+    close_icon = '',
+    left_trunc_marker = '',
+    right_trunc_marker = '',
+    diagnostics = "coc",
+    color_icons = true,
+    show_close_icon = true,
+    separator_style = "slant",
+    hover = {
+        enabled = true,
+        delay = 200,
+        reveal = {'close'}
+    },
+  },
+  highlights = {
+    separator = {
+      fg = '#073642',
+      bg = '#002b36',
+    },
+    separator_selected = {
+      fg = '#073642',
+    },
+    background = {
+      fg = '#657b83',
+      bg = '#002b36'
+    },
+    buffer_selected = {
+      fg = '#fdf6e3',
+      bold = true,
+    },
+    fill = {
+      bg = '#073642'
+    }
+  },
+}
+EOF
+
