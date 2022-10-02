@@ -16,7 +16,7 @@ tmux send-keys -t $session:$window 'v' Enter
 
 window=1
 tmux new-window -t $session:$window -n 'zsh'
-tmux split-window -t $session:$window -h
+tmux split-window -t $session:$window -h -p 90
 tmux select-pane -t $session:$window -t 0
 tmux split-window -t $session:$window -v
 
