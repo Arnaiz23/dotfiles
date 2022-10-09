@@ -10,7 +10,7 @@ Plug 'scrooloose/nerdtree' " Arbol de ficheros
 Plug 'sheerun/vim-polyglot' " Resaltado de sintaxis
 Plug 'jiangmiao/auto-pairs' " Autocompletado parentesis etc
 Plug 'alvan/vim-closetag' " Cierre automatico de etiquetas
-Plug 'neoclide/coc.nvim', {'branch' : 'release'} "Autocompletado
+" Plug 'neoclide/coc.nvim', {'branch' : 'release'} "Autocompletado
 Plug 'dense-analysis/ale' " Prettier al guardar
 
 " Buscador de files
@@ -19,6 +19,7 @@ Plug 'junegunn/fzf.vim'
 
 " Iconos
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -30,6 +31,44 @@ Plug 'nvim-lualine/lualine.nvim'
 
 " Izquierda git colores
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+
+" Sincronizacion de git para que salga lo de la izquierda
+Plug 'lewis6991/gitsigns.nvim'
+" Colores en el #fff
+Plug 'norcalli/nvim-colorizer.lua'
+
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
+Plug 'onsails/lspkind.nvim'
+
+" For luasnip users.
+Plug 'L3MON4D3/LuaSnip'
+" Plug 'saadparwaiz1/cmp_luasnip'
+
+" For ultisnips users.
+" Plug 'SirVer/ultisnips'
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
+" For snippy users.
+" Plug 'dcampos/nvim-snippy'
+" Plug 'dcampos/cmp-snippy'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'windwp/nvim-ts-autotag'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'jose-elias-alvarez/null-ls.nvim'
+
+" Markdown Preview
+Plug 'davidgranstrom/nvim-markdown-preview'
 
 call plug#end()
 
@@ -61,6 +100,9 @@ augroup deopleteCompleteDoneAu
   autocmd CompleteDone * silent! pclose!
 augroup END
 
+" Markdown preview configuration
+let g:nvim_markdown_preview_theme = 'solarized-dark'
+let g:nvim_markdown_preview_format = 'markdown'
 
 " ALE configuration
 
@@ -79,18 +121,19 @@ noremap <leader>w :w<cr>
 noremap <leader>F :Files<cr>
 noremap <leader>m :Maps<cr>
 noremap <leader>Q :wq<cr>
-noremap <leader>t :tabnew<cr>:Telescope find_files<cr>
+noremap <leader>t :tabnew<cr>:Telescope find_files hidden=true<cr>
 noremap <leader>e :e 
 noremap <leader>g :% s/
 noremap <leader>i gg=G<C-o><C-o>
 map <F3> :Telescope file_browser<cr>
-noremap <leader>p :Telescope find_files<cr>
+noremap <leader>p :Telescope find_files hidden=true<cr>
+noremap <leader>n :MarkdownPreview<cr>
 
 " source coc
-source ~/.dotfiles/nvim/coc.vim
+" source ~/.dotfiles/nvim/coc.vim
 
 " Delete errors
-let g:coc_disable_startup_warning = 1
+" let g:coc_disable_startup_warning = 1
 
 lua << EOF
 local fb_actions = require "telescope".extensions.file_browser.actions
@@ -114,92 +157,27 @@ require("telescope").load_extension "file_browser"
 EOF
 
 " Inferior line lualine
-lua << END
-
-require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {
-      statusline = {},
-      winbar = {},
-      },
-    ignore_focus = {},
-    always_divide_middle = true,
-    globalstatus = false,
-    refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
-      }
-    },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-    },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-    },
-  tabline = {},
-  winbar = {},
-  inactive_winbar = {},
-  extensions = {}
-  }
-END
+source ~/.dotfiles/nvim/plugins/lualine.lua
 
 " bufferline
 set termguicolors
-lua << EOF
-require('bufferline').setup {
-  options = {
-    mode = "tabs",
-    numbers = "ordinal",
-    buffer_close_icon = '',
-    modified_icon = '●',
-    close_icon = '',
-    left_trunc_marker = '',
-    right_trunc_marker = '',
-    diagnostics = "coc",
-    color_icons = true,
-    show_close_icon = true,
-    separator_style = "slant",
-    hover = {
-        enabled = true,
-        delay = 200,
-        reveal = {'close'}
-    },
-  },
-  highlights = {
-    separator = {
-      fg = '#073642',
-      bg = '#002b36',
-    },
-    separator_selected = {
-      fg = '#073642',
-    },
-    background = {
-      fg = '#657b83',
-      bg = '#002b36'
-    },
-    buffer_selected = {
-      fg = '#fdf6e3',
-      bold = true,
-    },
-    fill = {
-      bg = '#073642'
-    }
-  },
-}
-EOF
+source ~/.dotfiles/nvim/plugins/bufferline.lua
 
+" LSP Configuration
+source ~/.dotfiles/nvim/plugins/lspconfig.lua
+source ~/.dotfiles/nvim/plugins/cmp.lua
+source ~/.dotfiles/nvim/plugins/lspkind.lua
+source ~/.dotfiles/nvim/plugins/lsp-colors.lua
+source ~/.dotfiles/nvim/plugins/web-devicons.lua
+source ~/.dotfiles/nvim/plugins/gitsigns.lua
+source ~/.dotfiles/nvim/plugins/treesitter.lua
+source ~/.dotfiles/nvim/plugins/null-ls.lua
+
+lua << EOF
+require'colorizer'.setup()
+require('nvim-ts-autotag').setup()
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = { "quick_lint_js", "tailwindcss" , "cssls", "jsonls" }
+})
+EOF

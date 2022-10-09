@@ -17,7 +17,7 @@ set showmatch
 " identar espacio espacios (2)
 set sw=2
 " la linea en la que estas es la 0 
-" set relativenumber
+ set relativenumber
 " barra de abajo visible
 set laststatus=2
 " ocultar el modo
