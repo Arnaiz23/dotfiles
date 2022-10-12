@@ -108,9 +108,11 @@ primary_widgets = [
 
     widget.CPU(**base(bg="color6"),format='CPU {load_percent}%'),
 
-    powerline('dark', 'color6'),
+    powerline('color5', 'color6'),
 
     widget.Systray(background=colors['color5'], padding=5),
+
+    powerline('dark', 'color5'),
 ]
 
 secondary_widgets = [
