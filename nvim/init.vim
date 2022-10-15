@@ -115,6 +115,9 @@ let g:ale_linters_explicit = 1
 
 let g:ale_fix_on_save = 1
 
+let g:ale_javascript_eslint_executable="eslint_d"
+let g:ale_javascript_eslint_use_global=1
+
 " Personal shortcuts
 let mapleader = ","
 noremap <leader>w :w<cr>
@@ -178,6 +181,7 @@ require'colorizer'.setup()
 require('nvim-ts-autotag').setup()
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { "quick_lint_js", "tailwindcss" , "cssls", "jsonls" }
+  ensure_installed = { "quick_lint_js", "tailwindcss" , "cssls", "jsonls", "eslint" },
+  automatic_installation = true
 })
 EOF
