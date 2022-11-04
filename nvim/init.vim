@@ -70,6 +70,9 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 " Markdown Preview
 Plug 'davidgranstrom/nvim-markdown-preview'
 
+" Lsp UI
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+
 call plug#end()
 
 " Luego de esta línea puedes agregar tus configuraciones y mappings
@@ -175,6 +178,7 @@ source ~/.dotfiles/nvim/plugins/web-devicons.lua
 source ~/.dotfiles/nvim/plugins/gitsigns.lua
 source ~/.dotfiles/nvim/plugins/treesitter.lua
 source ~/.dotfiles/nvim/plugins/null-ls.lua
+source ~/.dotfiles/nvim/plugins/lspsaga.lua
 
 lua << EOF
 require'colorizer'.setup()
