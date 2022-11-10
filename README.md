@@ -7,7 +7,7 @@ This is the configuration of the Linux terminal.
 - Shell: ZSH + OH-MY-ZSH + Powerlevel10k theme
 - Plugins: Zgen
 - Essentials tools: wget + git
-- CLI Editors: vim + nano
+- CLI Editors: vim + nano + neovim
 - CLI tools: jq
 - API/Request tools: curl + http
 - Help/Info: man + tldr + neofetch
@@ -18,10 +18,12 @@ This is the configuration of the Linux terminal.
 
 ## Installation
 
+```sh
 git clone https://github.com/arnaiz23/dotfiles ~/.dotfiles
-cd dotfiles
-sh install.sh
+cd .dotfiles
+sh installer/arch_linux.sh || sh installer/ubuntu.sh
 nvm install --lts (or other version)
+```
 
 ## Requisites
 
@@ -40,17 +42,20 @@ su arnaiz
 	- coc.vim -> Configuration of the coc extension
 	- init.vim -> Configuration of neovim
 - .zshrc -> Configuration of zsh
-- install.sh -> Script of the installer
+- installers
+	- arch_linux.sh -> Script of the installer in Arch
+	- ubuntu.sh -> Script of the installer in Ubuntu
 - alacritty -> folder with the alacritty configuration
 - qtile -> folder with the qtile configuration
 
 ## Neovim / Vim
 
-Configuration of neovim
+Configuration of neovim (IDE mode)
 
 - Vim-plug -> Installer of vim plugins
+	* `sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
 
-## Coc Config
+## Coc Config (For default is disabled)
 
 - Copy the coc-settings.json in the :CocConfig
 
@@ -70,7 +75,7 @@ Configuration of neovim
 - Execute the script
 - For neovim:
 	- Execute v and :PlugInstall
-	- Later, execute :CocInstall
+	- Later, execute :CocInstall (If you use Coc, for default disabled)
 - For tmux:
 	- Execute tmux, Ctrl + r and Ctrl + I
 
@@ -78,11 +83,9 @@ Configuration of neovim
 
 ### QTILE
 
-If I want, I can to copy one theme and create my own style changing the colors
-
 ### TMUX
 
-- Ctrl-Space -> leader
-- Ctrl-Space [ -> enter in copy mode
+- `Ctrl-Space` -> leader
+- `Ctrl-Space [` -> enter in copy mode
 	- vi keys move
-- leader + ? -> help commands
+- `leader + ?` -> help commands
