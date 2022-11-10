@@ -1,25 +1,32 @@
 #!/bin/bash
 
-# Script sobre los dotfiles de Adrián Arnaiz
+# Script sobre los dotfiles de Adrián Arnaiz (Ubuntu)
 
 
 export DEBIAN_FRONTEND=noninteractive
 
 # Update linux
 
-sudo pacman -Syu
+sudo apt-get update
 
 # Programs
 
-sudo pacman -S \
-	sudo vim nano git bat zsh wget curl lsb-release \
+sudo apt-get install -y \
+	vim git bat zsh wget curl lsb-release \
 	jq less catimg tldr man neofetch htop unzip zip \
 	exa lolcat gpg locate zgen net-tools nmap ncal \
 	neovim docker libxcrypt-compat tmux rofi alacritty redshift \
 	dunst feh tree
 
 # Si quieres Qtile
-# sudo pacman -S qtile pacman-contrib
+while true; do
+	read -p "Do you wish to install qtile? (y/n) " yn
+    case $yn in
+        [Yy]* ) sudo apt-get install -y qtile pacman-contrib; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
 
 # Fix batcat -> cat (Debian)
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
