@@ -36,6 +36,8 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 Plug 'lewis6991/gitsigns.nvim'
 " Colores en el #fff
 Plug 'norcalli/nvim-colorizer.lua'
+" Colores para tailwindcss
+Plug 'princejoogie/tailwind-highlight.nvim'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -52,7 +54,7 @@ Plug 'onsails/lspkind.nvim'
 
 " For luasnip users.
 Plug 'L3MON4D3/LuaSnip'
-" Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 " For ultisnips users.
 " Plug 'SirVer/ultisnips'
