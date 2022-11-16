@@ -145,6 +145,42 @@ require('lspconfig').tailwindcss.setup({
   end
 })
 
+require('lspconfig')["html"].setup({
+  capabilities = capabilities,
+  cmd = { "vscode-html-language-server", "--stdio" },
+  filetypes = { "html" },
+  init_options = {
+    configurationSection = { "html", "css", "javascript" },
+    embeddedLanguages = {
+      css = true,
+      javascript = true
+    },
+    provideFormatter = true
+  }
+})
+
+require 'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+  cmd = { "vscode-css-language-server", "--stdio" },
+  filetypes = { "css", "scss", "less" },
+  settings = {
+    css = {
+      validate = true
+    },
+    less = {
+      validate = true
+    },
+    scss = {
+      validate = true
+    }
+  }
+}
+
+require 'lspconfig'.cssmodules_ls.setup {
+  cmd = { "cssmodules-language-server" },
+  filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
+}
+
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
 vim.o.updatetime = 250
