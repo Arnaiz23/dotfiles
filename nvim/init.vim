@@ -114,6 +114,9 @@ let g:nvim_markdown_preview_format = 'markdown'
 let g:ale_fixers = {
       \   'javascript': ['prettier'],
       \   'css': ['prettier'],
+      \   'javascriptreact' : ['prettier'],
+      \   'typescriptreact' : ['prettier'],
+      \   'typescript' : ['prettier'],
       \}
 
 let g:ale_linters_explicit = 1
