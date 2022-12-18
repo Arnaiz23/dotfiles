@@ -56,29 +56,22 @@ Plug 'onsails/lspkind.nvim'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
-" For ultisnips users.
-" Plug 'SirVer/ultisnips'
-" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-
 " For snippy users.
-" Plug 'dcampos/nvim-snippy'
-" Plug 'dcampos/cmp-snippy'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
-" Markdown Preview
-Plug 'davidgranstrom/nvim-markdown-preview'
-
 " Lsp UI
 Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+
+" Indent plugin configuration
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
 
 " Luego de esta línea puedes agregar tus configuraciones y mappings
-"
 set termguicolors  " Activa true colors en la terminal
 colorscheme onedark  " Activa tema onedark
 
@@ -104,10 +97,6 @@ augroup deopleteCompleteDoneAu
   autocmd!
   autocmd CompleteDone * silent! pclose!
 augroup END
-
-" Markdown preview configuration
-let g:nvim_markdown_preview_theme = 'solarized-dark'
-let g:nvim_markdown_preview_format = 'markdown'
 
 " ALE configuration
 
@@ -168,13 +157,16 @@ require("telescope").load_extension "file_browser"
 EOF
 
 " Inferior line lualine
+"
 source ~/.dotfiles/nvim/plugins/lualine.lua
 
 " bufferline
+"
 set termguicolors
 source ~/.dotfiles/nvim/plugins/bufferline.lua
 
 " LSP Configuration
+"
 source ~/.dotfiles/nvim/plugins/lspconfig.lua
 source ~/.dotfiles/nvim/plugins/cmp.lua
 source ~/.dotfiles/nvim/plugins/lspkind.lua
@@ -193,4 +185,13 @@ require('mason-lspconfig').setup({
   ensure_installed = { "quick_lint_js", "tailwindcss" , "cssls", "jsonls", "eslint" },
   automatic_installation = true
 })
+EOF
+
+" Indent configuration
+"
+lua << EOF
+require("indent_blankline").setup {
+    char = "┊",
+    show_trailing_blankline_indent = false,
+}
 EOF
