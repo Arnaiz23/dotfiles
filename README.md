@@ -47,6 +47,7 @@ su arnaiz
 	- ubuntu.sh -> Script of the installer in Ubuntu
 - alacritty -> folder with the alacritty configuration
 - qtile -> folder with the qtile configuration
+- scripts -> folder with the system scripts. Ej: ide
 
 ## Neovim / Vim
 
@@ -89,3 +90,14 @@ Configuration of neovim (IDE mode)
 - `Ctrl-Space [` -> enter in copy mode
 	- vi keys move
 - `leader + ?` -> help commands
+
+
+## Scripts
+
+- tmux-start.sh -> script for create a tmux ide
+
+### Uses
+
+```bash
+	sudo ln -s ~/.dotfiles/scripts/tmux-start.sh /usr/local/bin/${name}
+```
