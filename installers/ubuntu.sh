@@ -20,6 +20,8 @@ sudo apt-get install -y \
 
 # Si quieres Qtile
 while true; do
+	clear;
+	echo "--------------------------------------------"
 	read -p "Do you wish to install qtile? (y/n) " yn
     case $yn in
         [Yy]* ) sudo apt-get install -y qtile pacman-contrib; break;;
