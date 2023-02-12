@@ -107,4 +107,4 @@ Configuration of neovim (IDE mode)
 
 ### Appareance
 
-Download the `.zip` of the theme that you want. Copy in the folder `~/.themes` and extract here. With the program `lxappearance` you can select this. The same steps for icons but the folder is `~/.icons`.
+Download the `.zip` of the theme that you want. Copy in the folder `~/.themes` and extract here. With the program `lxappearance` you can select this. The same steps for icons but the folder is `~/.icons`. Download GTK themes.
