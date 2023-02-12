@@ -1,6 +1,8 @@
 from libqtile import widget
 from .theme import colors
 
+red_device = 'enp37s0'
+
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
 def base(fg='text', bg='dark'): 
@@ -88,7 +90,7 @@ primary_widgets = [
 
     icon(bg="color3", text=' '),  # Icon: nf-fa-feed
     
-    widget.Net(**base(bg='color3'), interface='enp37s0', prefix='M'),
+    widget.Net(**base(bg='color3'), interface=red_device, prefix='M'),
 
     powerline('color2', 'color3'),
 
@@ -124,7 +126,7 @@ secondary_widgets = [
 
     icon(bg="color4", text=' '),  # Icon: nf-fa-feed
 
-    widget.Net(**base(bg='color4'), interface='enp37s0', prefix='M'),
+    widget.Net(**base(bg='color4'), interface=red_device, prefix='M'),
 
     powerline('color3', 'color4'),
 
