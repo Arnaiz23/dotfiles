@@ -15,6 +15,8 @@ This is the configuration of the Linux terminal.
 - Compressors/conversors: unzip + zip
 - Package Managers: Node/NVM/PNPM
 - Containers: Docker
+- Customize appareance: lxappearance
+- System icons: network-manager-applet
 
 ## Installation
 
@@ -101,3 +103,8 @@ Configuration of neovim (IDE mode)
 ```bash
 	sudo ln -s ~/.dotfiles/scripts/tmux-start.sh /usr/local/bin/${name}
 ```
+
+
+### Appareance
+
+Download the `.zip` of the theme that you want. Copy in the folder `~/.themes` and extract here. With the program `lxappearance` you can select this. The same steps for icons but the folder is `~/.icons`.

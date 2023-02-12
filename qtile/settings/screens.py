@@ -11,10 +11,12 @@ from .widgets import primary_widgets, secondary_widgets
 import subprocess
 
 
+# Function that create the status_bar. (widgets, size)
 def status_bar(widgets):
     return bar.Bar(widgets, 24, opacity=0.92)
 
 
+# top -> position of the status_bar (top, bottom)
 screens = [Screen(top=status_bar(primary_widgets))]
 
 xrandr = "xrandr | grep -w 'connected' | cut -d ' ' -f 2 | wc -l"

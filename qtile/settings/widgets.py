@@ -72,6 +72,7 @@ primary_widgets = [
 
     separator(),
 
+    # Updates
     powerline('color4', 'dark'),
 
     icon(bg="color4", text=' '), # Icon: nf-fa-download
@@ -86,30 +87,40 @@ primary_widgets = [
         custom_command='checkupdates',
     ),
 
+    # Network
     powerline('color3', 'color4'),
 
     icon(bg="color3", text=' '),  # Icon: nf-fa-feed
     
     widget.Net(**base(bg='color3'), interface=red_device, prefix='M'),
 
-    powerline('color2', 'color3'),
+    # RAM
+    powerline('color7', 'color3'),
+
+    icon(bg="color7", text=' '),  # Icon: nf-fa-save
+    
+    widget.Memory(**base(bg='color7') ),
+
+    # Layout
+    powerline('color2', 'color7'),
 
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
 
     widget.CurrentLayout(**base(bg='color2'), padding=5),
 
+    # Calendar and clock
     powerline('color1', 'color2'),
 
     icon(bg="color1", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
 
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
+    # CPU
     powerline('color6', 'color1'),
 
-    # widget.OpenWeather(location='Mostoles', format='{location_city}: {icon} {temp}º{units_temperature}'),
+    widget.CPU(**base(bg="color6"),format='󰍛 CPU {load_percent}%'), # Icon: nf-md-memory
 
-    widget.CPU(**base(bg="color6"),format='CPU {load_percent}%'),
-
+    # System icons
     powerline('color5', 'color6'),
 
     widget.Systray(background=colors['color5'], padding=5),

@@ -12,16 +12,14 @@ from .keys import mod, keys
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 # Icons: 
 # nf-fa-firefox, 
-# nf-fae-python, 
+# ng-dev-chrome, 
 # nf-dev-terminal, 
 # nf-fa-code, 
-# nf-oct-git_merge, 
-# nf-linux-docker,
-# nf-mdi-image, 
-# nf-mdi-layers
+# nf-md-discord, 
+# nf-fa-spotify,
 
 groups = [Group(i) for i in [
-    "   ", "   ", "   ", "   ", " ﭮ  ", "  ",
+    "   ", "   ", "   ", " 󰨞 ", " ﭮ  ", "  "
 ]]
 
 for i, group in enumerate(groups):

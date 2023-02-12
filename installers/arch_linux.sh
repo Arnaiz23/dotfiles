@@ -16,7 +16,7 @@ sudo pacman -S \
 	jq less catimg tldr man neofetch htop unzip zip \
 	exa lolcat gpg locate zgen net-tools nmap ncal \
 	neovim docker libxcrypt-compat tmux rofi alacritty redshift \
-	dunst feh tree
+	dunst feh tree lxappearance network-manager-applet
 
 # Si quieres Qtile
 while true; do

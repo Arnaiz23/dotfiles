@@ -8,6 +8,5 @@ volumeicon &
 # feh
 ~/.fehbg &
 
-# Prueba keyring
-# Si no funciona:
-gnome-keyring-daemon -s
+# network icon
+nm-applet &

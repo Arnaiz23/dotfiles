@@ -8,6 +8,7 @@
 
 from libqtile import hook
 
+# Imports from my qtile configuration
 from settings.keys import mod, keys
 from settings.groups import groups
 from settings.layouts import layouts, floating_layout
