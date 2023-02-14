@@ -95,14 +95,19 @@ primary_widgets = [
     widget.Net(**base(bg='color3'), interface=red_device, prefix='M'),
 
     # RAM
-    powerline('color7', 'color3'),
+    powerline('color6', 'color3'),
 
-    icon(bg="color7", text=' '),  # Icon: nf-fa-save
+    icon(bg="color6", text=' '),  # Icon: nf-fa-save
     
-    widget.Memory(**base(bg='color7') ),
+    widget.Memory(**base(bg='color6') ),
+
+    # CPU
+    widget.TextBox(background=colors["color6"],text=" "),
+
+    widget.CPU(**base(bg="color6"),format='󰍛 CPU {load_percent}%'), # Icon: nf-md-memory
 
     # Layout
-    powerline('color2', 'color7'),
+    powerline('color2', 'color6'),
 
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
 
@@ -115,13 +120,8 @@ primary_widgets = [
 
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
-    # CPU
-    powerline('color6', 'color1'),
-
-    widget.CPU(**base(bg="color6"),format='󰍛 CPU {load_percent}%'), # Icon: nf-md-memory
-
     # System icons
-    powerline('color5', 'color6'),
+    powerline('color5', 'color1'),
 
     widget.Systray(background=colors['color5'], padding=5),
 
