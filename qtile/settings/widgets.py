@@ -121,11 +121,11 @@ primary_widgets = [
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
     # System icons
-    powerline('color5', 'color1'),
+    powerline('text', 'color1'),
 
-    widget.Systray(background=colors['color5'], padding=5),
+    widget.Systray(background=colors['text'], padding=5),
 
-    powerline('dark', 'color5'),
+    powerline('dark', 'text'),
 ]
 
 secondary_widgets = [
