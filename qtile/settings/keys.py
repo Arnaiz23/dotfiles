@@ -14,6 +14,7 @@ terminal = "alacritty"
 browser = "firefox"
 explorer = "thunar"
 notes = "inkdrop"
+lock_command = "slock"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -53,7 +54,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "r", lazy.spawncmd()),
 
     # Screen lock
-    ([mod, "control"], "l", lazy.spawn("slock")),
+    ([mod, "control"], "l", lazy.spawn(lock_command)),
 
     # ------------ App Configs ------------
 
