@@ -108,3 +108,7 @@ Configuration of neovim (IDE mode)
 ### Appareance
 
 Download the `.zip` of the theme that you want. Copy in the folder `~/.themes` and extract here. With the program `lxappearance` you can select this. The same steps for icons but the folder is `~/.icons`. Download GTK themes.
+
+### GRUB theme
+
+I use the [darkmatter - Linux](https://github.com/VandalByte/darkmatter-grub2-theme)

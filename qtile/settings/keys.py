@@ -13,6 +13,7 @@ mod = "mod4"
 terminal = "alacritty"
 browser = "firefox"
 explorer = "thunar"
+notes = "inkdrop"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -81,6 +82,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Emojis
     ([mod], "g", lazy.spawn("emoji-picker")),
+
+    # inkdrop
+    ([mod], "i", lazy.spawn(notes)),
 
     # ------------ Hardware Configs ------------
 
