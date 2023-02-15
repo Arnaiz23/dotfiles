@@ -10,3 +10,6 @@ volumeicon &
 
 # network icon
 nm-applet &
+
+# picom
+picom &
