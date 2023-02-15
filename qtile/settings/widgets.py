@@ -32,7 +32,7 @@ def powerline(fg="light", bg="dark"):
         **base(fg, bg),
         text="", # Icon: nf-oct-triangle_left
         fontsize=37,
-        padding=-2
+        padding=-3
     )
 
 
@@ -72,6 +72,11 @@ primary_widgets = [
     *workspaces(),
 
     separator(),
+
+    # System icons
+    widget.Systray(background=colors['dark'], padding=5),
+
+    widget.TextBox(text=" ", background=colors["dark"]),
 
     # Updates
     powerline('color4', 'dark'),
@@ -124,10 +129,6 @@ primary_widgets = [
 
     # System icons
     powerline('text', 'color1'),
-
-    widget.Systray(background=colors['text'], padding=5),
-
-    powerline('dark', 'text'),
 ]
 
 secondary_widgets = [
