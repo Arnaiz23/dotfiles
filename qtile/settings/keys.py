@@ -14,7 +14,8 @@ terminal = "alacritty"
 browser = "firefox"
 explorer = "thunar"
 notes = "inkdrop"
-lock_command = "slock"
+lock_command = "dm-tool lock"
+#lock_command = "slock"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
