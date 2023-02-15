@@ -1,7 +1,8 @@
-from libqtile import widget
+from libqtile import widget, qtile
 from .theme import colors
 
 red_device = 'enp37s0'
+myTerm = "alacritty"
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
@@ -85,6 +86,7 @@ primary_widgets = [
         display_format='{updates}',
         update_interval=1800,
         custom_command='checkupdates',
+        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')}
     ),
 
     # Network
