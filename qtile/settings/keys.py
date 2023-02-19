@@ -62,6 +62,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # Menu
     ([mod], "m", lazy.spawn("rofi -show drun")),
 
+    # DMenu
+    ([mod], "F2", lazy.spawn("dmenu_run")),
+
     # Window Nav
     ([mod, "shift"], "m", lazy.spawn("rofi -show")),
 
