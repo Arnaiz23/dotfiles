@@ -86,6 +86,12 @@ Configuration of neovim (IDE mode)
 
 ### QTILE
 
+For I can use the qtile extrax, I need to install this command: 
+
+```bash
+	yay -S qtile-extras-git
+```
+
 ### TMUX
 
 - `Ctrl-Space` -> leader
