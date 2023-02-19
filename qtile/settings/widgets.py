@@ -1,5 +1,4 @@
 from libqtile import widget, qtile
-from qtile_extras.widget import decorations
 from .theme import colors
 
 from qtile_extras import widget
