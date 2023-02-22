@@ -69,6 +69,9 @@ Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 " Indent plugin configuration
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+"MarkdownPreview
+Plug 'shime/vim-livedown'
+
 call plug#end()
 
 " Luego de esta línea puedes agregar tus configuraciones y mappings
@@ -127,7 +130,7 @@ noremap <leader>g :% s/
 noremap <leader>i gg=G<C-o><C-o>
 map <F3> :Telescope file_browser<cr>
 noremap <leader>p :Telescope find_files hidden=true<cr>
-noremap <leader>n :MarkdownPreview<cr>
+noremap <leader>n :LivedownToggle<cr>
 
 " source coc
 " source ~/.dotfiles/nvim/coc.vim
@@ -195,3 +198,10 @@ require("indent_blankline").setup {
     show_trailing_blankline_indent = false,
 }
 EOF
+
+" Livedown Markdown configuration
+"
+let g:livedown_autorun = 0
+let g:livedown_open = 1
+let g:livedown_port = 1337
+let g:livedown_browser = "firefox"
