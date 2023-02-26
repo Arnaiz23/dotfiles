@@ -33,6 +33,7 @@ alias gpo="git push origin"
 alias v="nvim"
 alias py="python3"
 alias cz="git-cz"
+alias bgwp="feh --bg-scale ~/Imágenes/wallpaper.jpg"
 
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
