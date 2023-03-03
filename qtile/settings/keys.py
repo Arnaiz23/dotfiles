@@ -16,6 +16,7 @@ explorer = "thunar"
 notes = "inkdrop"
 lock_command = "dm-tool lock"
 #lock_command = "slock"
+menu = "rofi -show drun"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -60,10 +61,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ App Configs ------------
 
     # Menu
-    ([mod], "m", lazy.spawn("rofi -show drun")),
+    ([mod, "shift"], "Return", lazy.spawn(menu)),
 
     # DMenu
-    ([mod], "F2", lazy.spawn("dmenu_run")),
+    ([mod], "m", lazy.spawn("dmenu_run")),
 
     # Window Nav
     ([mod, "shift"], "m", lazy.spawn("rofi -show")),
