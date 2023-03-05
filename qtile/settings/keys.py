@@ -43,7 +43,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "Tab", lazy.prev_layout()),
 
     # Kill window
-    ([mod], "w", lazy.window.kill()),
+    ([mod, "shift"], "c", lazy.window.kill()),
 
     # Switch focus of monitors
     ([mod], "period", lazy.next_screen()),
