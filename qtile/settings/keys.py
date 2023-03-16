@@ -12,6 +12,7 @@ mod = "mod4"
 
 terminal = "alacritty"
 browser = "firefox"
+secondary_browser = "chromium"
 explorer = "thunar"
 notes = "inkdrop"
 lock_command = "dm-tool lock"
@@ -71,6 +72,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Browser
     ([mod], "b", lazy.spawn(browser)),
+    ([mod], "c", lazy.spawn(secondary_browser)),
 
     # File Explorer
     ([mod], "e", lazy.spawn(explorer)),
