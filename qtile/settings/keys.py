@@ -18,6 +18,7 @@ notes = "inkdrop"
 lock_command = "dm-tool lock"
 #lock_command = "slock"
 menu = "rofi -show drun"
+screenshot = "flameshot gui"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -85,8 +86,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
     # Screenshot
-    ([mod], "s", lazy.spawn("scrot")),
-    ([mod, "shift"], "s", lazy.spawn("scrot -s")),
+    ([mod], "s", lazy.spawn(screenshot)),
+    #([mod, "shift"], "s", lazy.spawn("scrot -s")),
 
     # Emojis
     ([mod], "g", lazy.spawn("emoji-picker")),
