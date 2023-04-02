@@ -1,0 +1,65 @@
+{
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "'FiraCode Nerd Font' ,'Cascadia Code PL', Hack NF",
+  "editor.fontLigatures": true,
+  "editor.guides.bracketPairs": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "emmet.includeLanguages": {
+    "markdown" : "html",
+    "javascript": "javascriptreact",
+    "jsx-sublime-babel-tags": "javascriptreact"
+  },
+  "explorer.confirmDelete": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "sync.gist": "d3fa1504c9ed2f3b2892f188cbe8fc16",
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.fontFamily": "'Cascadia Code PL'",
+  "oneDarkPro.italic": true,
+  "oneDarkPro.bold": false,
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.editor.languageDetection": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "javascript",
+    "css": "css"
+  },
+  "editor.quickSuggestions": {
+      "strings": true
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "git.confirmSync": false,
+  "editor.stickyScroll.enabled": true,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  }
+}
+
