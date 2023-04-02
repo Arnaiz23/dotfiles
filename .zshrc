@@ -35,6 +35,9 @@ alias py="python3"
 alias cz="git-cz"
 alias bgwp="feh --bg-scale ~/Imágenes/wallpaper.jpg"
 
+# lazygit
+alias lg="lazygit"
+
 # navigation
 alias ..="cd .."
 alias ...="cd ../.."
