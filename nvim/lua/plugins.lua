@@ -9,15 +9,10 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   -- Your plugins go here
-  -- Theme
-  use 'joshdick/onedark.vim'
-  -- File Explorer
-  use {
-'nvim-tree/nvim-tree.lua',
-config = "require('nvim-tree')"
-  }
-  -- Autocomplete parenthesis and others
-  use 'jiangmiao/auto-pairs'
-  -- Icons
-  use 'kyazdani42/nvim-web-devicons'
+  use 'joshdick/onedark.vim'            -- Theme
+  use 'nvim-tree/nvim-tree.lua'         -- File Explorer
+  use 'jiangmiao/auto-pairs'            -- Autocomplete parenthesis and others
+  use 'kyazdani42/nvim-web-devicons'    -- Icons
+  use 'nvim-lualine/lualine.nvim'       -- Lualine
+  use 'nvim-treesitter/nvim-treesitter' -- Colorized sintax
 end)
