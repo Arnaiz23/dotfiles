@@ -39,6 +39,9 @@ alias zshconfig="v ~/.dotfiles/.zshrc"
 # lazygit
 alias lg="lazygit"
 
+# delete node_modules
+alias nmkill="npx npkill"
+
 # navigation
 alias ..="cd .."
 alias ...="cd ../.."
