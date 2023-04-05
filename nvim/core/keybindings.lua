@@ -9,7 +9,7 @@ local function map(mode, shorcut, command)
 end
 
 local function nmap(shorcut, command)
-	map(shorcut, command)
+	map('n', shorcut, command)
 end
 
 -- move beetween panels
