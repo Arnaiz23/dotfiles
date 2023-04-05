@@ -13,3 +13,9 @@ nm-applet &
 
 # picom
 picom &
+
+# bluetooth icon
+blueman-applet &
+
+dbus-update-activation-environment --all
+gnome-keyring-daemon --start --components=secrets

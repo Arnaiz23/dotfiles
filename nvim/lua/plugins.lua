@@ -13,8 +13,8 @@ packer.startup(function(use)
   use 'joshdick/onedark.vim'
   -- File Explorer
   use {
-    'nvim-tree/nvim-tree.lua',
-    config = "require('nvim-tree-config')"
+'nvim-tree/nvim-tree.lua',
+config = "require('nvim-tree')"
   }
   -- Autocomplete parenthesis and others
   use 'jiangmiao/auto-pairs'

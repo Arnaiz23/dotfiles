@@ -4,7 +4,7 @@ from .theme import colors
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 
-red_device = 'enp37s0'
+red_device = 'wlan0'
 myTerm = "alacritty"
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
