@@ -5,7 +5,7 @@ vim.opt.termguicolors = true
 vim.cmd.colorscheme('onedark')
 
 -- Plugins
-require("plugins")
+require("arnaiz.plugins")
 
 -- Keybindings
-require("core.keybindings")
+require("arnaiz.keybindings")
