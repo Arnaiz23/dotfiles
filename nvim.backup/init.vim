@@ -167,25 +167,25 @@ EOF
 
 " Inferior line lualine
 "
-source ~/.dotfiles/nvim/plugins/lualine.lua
+source ~/.config/nvim/plugins/lualine.lua
 
 " bufferline
 "
 set termguicolors
-source ~/.dotfiles/nvim/plugins/bufferline.lua
+source ~/.config/nvim/plugins/bufferline.lua
 
 " LSP Configuration
 "
-source ~/.dotfiles/nvim/plugins/lspconfig.lua
-source ~/.dotfiles/nvim/plugins/cmp.lua
-source ~/.dotfiles/nvim/plugins/lspkind.lua
-source ~/.dotfiles/nvim/plugins/lsp-colors.lua
-source ~/.dotfiles/nvim/plugins/web-devicons.lua
-source ~/.dotfiles/nvim/plugins/gitsigns.lua
-source ~/.dotfiles/nvim/plugins/treesitter.lua
-source ~/.dotfiles/nvim/plugins/null-ls.lua
-source ~/.dotfiles/nvim/plugins/lspsaga.lua
-source ~/.dotfiles/nvim/plugins/nvim-tree.lua
+source ~/.config/nvim/plugins/lspconfig.lua
+source ~/.config/nvim/plugins/cmp.lua
+source ~/.config/nvim/plugins/lspkind.lua
+source ~/.config/nvim/plugins/lsp-colors.lua
+source ~/.config/nvim/plugins/web-devicons.lua
+source ~/.config/nvim/plugins/gitsigns.lua
+source ~/.config/nvim/plugins/treesitter.lua
+source ~/.config/nvim/plugins/null-ls.lua
+source ~/.config/nvim/plugins/lspsaga.lua
+source ~/.config/nvim/plugins/nvim-tree.lua
 
 lua << EOF
 require'colorizer'.setup()
