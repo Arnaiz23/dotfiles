@@ -6,3 +6,6 @@ vim.cmd.colorscheme('onedark')
 
 -- Plugins
 require("plugins")
+
+-- Keybindings
+require("core.keybindings")
