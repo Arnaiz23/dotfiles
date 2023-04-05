@@ -2,7 +2,7 @@
 vim.opt.termguicolors = true
 
 -- Set the colorscheme
--- vim.cmd.colorscheme('onedark')
+vim.cmd.colorscheme('onedark')
 
 -- Plugins
 require("plugins")

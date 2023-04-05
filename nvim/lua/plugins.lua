@@ -12,7 +12,12 @@ packer.startup(function(use)
   -- Theme
   use 'joshdick/onedark.vim'
   -- File Explorer
-  use 'nvim-tree/nvim-tree.lua'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    config = "require('nvim-tree-config')"
+  }
   -- Autocomplete parenthesis and others
   use 'jiangmiao/auto-pairs'
+  -- Icons
+  use 'kyazdani42/nvim-web-devicons'
 end)
