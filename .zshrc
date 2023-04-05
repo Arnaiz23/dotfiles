@@ -34,6 +34,7 @@ alias v="nvim"
 alias py="python3"
 alias cz="git-cz"
 alias bgwp="feh --bg-scale ~/Imágenes/wallpaper.jpg"
+alias zshconfig="v ~/.dotfiles/.zshrc"
 
 # lazygit
 alias lg="lazygit"
