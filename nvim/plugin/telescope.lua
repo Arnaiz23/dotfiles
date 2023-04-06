@@ -8,14 +8,6 @@ telescope.setup {
     file_browser = {
       theme = "ivy",
       hijack_netrw = true,
-      mappings = {
-        ["i"] = {
-          -- your custom insert mode mappings
-        },
-        ["n"] = {
-          ["<C-a>"] = fb_actions.create
-        },
-      },
     },
   },
 }
