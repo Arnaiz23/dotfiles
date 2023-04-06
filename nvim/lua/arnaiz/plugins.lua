@@ -24,6 +24,7 @@ packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'          -- Background color to the hex code #fff
   use 'princejoogie/tailwind-highlight.nvim' -- Background color tailwind
   use 'neovim/nvim-lspconfig'                -- Configurations for Nvim LSP
+  use 'hrsh7th/cmp-nvim-lsp'                 -- LSP configuration
   use 'glepnir/lspsaga.nvim'                 -- LSP UI
   use 'lukas-reineke/indent-blankline.nvim'  -- Indent plugin configuration
 end)
