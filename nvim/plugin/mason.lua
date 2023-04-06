@@ -7,7 +7,7 @@ if not status_mason_lspconfig then return end
 mason.setup {}
 
 mason_lspconfig.setup {
-  ensure_installed = { "quick_lint_js", "tailwindcss", "cssls", "jsonls", "eslint", "cssmodules-language-server",
-    "typescript-language-server" },
+  ensure_installed = { "quick_lint_js", "tailwindcss", "cssls", "jsonls", "eslint", "cssmodulesls",
+    "tsserver", "lua_ls", "html" },
   automatic_installation = true
 }
