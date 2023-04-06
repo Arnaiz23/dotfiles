@@ -27,4 +27,6 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'                 -- LSP configuration
   use 'glepnir/lspsaga.nvim'                 -- LSP UI
   use 'lukas-reineke/indent-blankline.nvim'  -- Indent plugin configuration
+  use 'williamboman/mason.nvim'              -- Mason
+  use 'williamboman/mason-lspconfig.nvim'    -- Mason LSP
 end)
