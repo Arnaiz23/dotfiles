@@ -39,4 +39,5 @@ packer.startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim' -- Indent plugin configuration
 	use 'williamboman/mason.nvim'            -- Mason
 	use 'williamboman/mason-lspconfig.nvim'  -- Mason LSP
+	use 'akinsho/bufferline.nvim'            -- Tabs custom
 end)
