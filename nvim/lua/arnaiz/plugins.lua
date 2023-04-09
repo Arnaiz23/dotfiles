@@ -24,12 +24,14 @@ packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'          -- Background color to the hex code #fff
   use 'princejoogie/tailwind-highlight.nvim' -- Background color tailwind
   use 'neovim/nvim-lspconfig'                -- Configurations for Nvim LSP
-  use 'hrsh7th/cmp-nvim-lsp'                 -- LSP configuration
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'                 -- Provide nvim_lsp source for language servers
+  use 'hrsh7th/cmp-buffer'                   -- provides buffer source for completion from the opened buffer
+  use 'hrsh7th/cmp-path'                     -- provides path source for the completion of filepaths
+  use 'hrsh7th/cmp-cmdline'                  -- provides cmdline source for vim's comamnds
+  use 'hrsh7th/nvim-cmp'                     -- Autocompletion engine
   use 'onsails/lspkind.nvim'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
   use 'jose-elias-alvarez/null-ls.nvim'     -- Inject actions with LSP
   use 'MunifTanjim/prettier.nvim'           -- Prettier with LSP
   use 'glepnir/lspsaga.nvim'                -- LSP UI
