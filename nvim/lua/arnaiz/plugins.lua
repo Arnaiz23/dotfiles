@@ -25,10 +25,14 @@ packer.startup(function(use)
   use 'princejoogie/tailwind-highlight.nvim' -- Background color tailwind
   use 'neovim/nvim-lspconfig'                -- Configurations for Nvim LSP
   use 'hrsh7th/cmp-nvim-lsp'                 -- LSP configuration
-  use 'jose-elias-alvarez/null-ls.nvim'      -- Inject actions with LSP
-  use 'MunifTanjim/prettier.nvim'            -- Prettier with LSP
-  use 'glepnir/lspsaga.nvim'                 -- LSP UI
-  use 'lukas-reineke/indent-blankline.nvim'  -- Indent plugin configuration
-  use 'williamboman/mason.nvim'              -- Mason
-  use 'williamboman/mason-lspconfig.nvim'    -- Mason LSP
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'jose-elias-alvarez/null-ls.nvim'     -- Inject actions with LSP
+  use 'MunifTanjim/prettier.nvim'           -- Prettier with LSP
+  use 'glepnir/lspsaga.nvim'                -- LSP UI
+  use 'lukas-reineke/indent-blankline.nvim' -- Indent plugin configuration
+  use 'williamboman/mason.nvim'             -- Mason
+  use 'williamboman/mason-lspconfig.nvim'   -- Mason LSP
 end)
