@@ -1,8 +1,8 @@
 -- Set the true colors in the terminal
 vim.opt.termguicolors = true
 
--- Set the colorscheme
-vim.cmd.colorscheme('onedark')
+-- Colorscheme
+require("arnaiz.colorscheme")
 
 -- Plugins
 require("arnaiz.plugins")
