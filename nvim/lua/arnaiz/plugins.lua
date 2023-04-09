@@ -9,7 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- Your plugins go here
-	use 'joshdick/onedark.vim'                -- Theme
+	-- use 'joshdick/onedark.vim'                -- Theme
 	use 'folke/tokyonight.nvim'               -- Theme
 	use 'nvim-tree/nvim-tree.lua'             -- File Explorer
 	use 'jiangmiao/auto-pairs'                -- Autocomplete parenthesis and others
