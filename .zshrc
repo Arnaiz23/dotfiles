@@ -10,12 +10,12 @@ export ZSH="$HOME/.oh-my-zsh"
 # Selecth the zsh theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Reload theme
-source $ZSH/oh-my-zsh.sh
-
 plugins=(
   git common-aliases colored-man-pages
 )
+
+# Reload theme
+source $ZSH/oh-my-zsh.sh
 
 # Load the plugins
 source "${HOME}/.zgen/zgen.zsh"
