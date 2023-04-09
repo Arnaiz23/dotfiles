@@ -10,6 +10,7 @@ packer.startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- Your plugins go here
 	use 'joshdick/onedark.vim'                -- Theme
+	use 'folke/tokyonight.nvim'               -- Theme
 	use 'nvim-tree/nvim-tree.lua'             -- File Explorer
 	use 'jiangmiao/auto-pairs'                -- Autocomplete parenthesis and others
 	use 'kyazdani42/nvim-web-devicons'        -- Icons
