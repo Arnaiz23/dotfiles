@@ -1,6 +1,3 @@
--- Set the true colors in the terminal
-vim.opt.termguicolors = true
-
 -- Colorscheme
 require("arnaiz.colorscheme")
 

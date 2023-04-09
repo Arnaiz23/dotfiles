@@ -15,3 +15,5 @@ opt.laststatus = 2           -- Bottom menu visible
 
 vim.cmd 'syntax enable'      -- Active the syntax
 vim.opt.termguicolors = true -- Activate the termguicolors
+
+vim.o.timeoutlen = 300       -- Which key config

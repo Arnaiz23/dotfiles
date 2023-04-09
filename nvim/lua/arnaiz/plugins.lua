@@ -40,4 +40,5 @@ packer.startup(function(use)
 	use 'williamboman/mason.nvim'            -- Mason
 	use 'williamboman/mason-lspconfig.nvim'  -- Mason LSP
 	use 'akinsho/bufferline.nvim'            -- Tabs custom
+	use 'folke/which-key.nvim'               -- Which key
 end)
