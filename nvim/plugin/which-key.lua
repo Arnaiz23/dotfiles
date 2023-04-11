@@ -4,6 +4,9 @@ local mappings = {
 	g = {
 		name = "Git",
 		b = { "<cmd>:Telescope git_branches<cr>", "Show git branches" }
+	},
+	s = {
+		name = "Split"
 	}
 }
 

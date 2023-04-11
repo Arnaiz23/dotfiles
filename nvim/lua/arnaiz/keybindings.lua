@@ -42,3 +42,7 @@ Nmap('<leader>t', ':tabnew<CR>', 'Open new tab')
 
 -- Show all the maps
 -- Nmap('<leader>m', ':Maps<CR>')
+
+-- Split the window
+Nmap('<leader>sv', '<C-w>v', 'Split vertical the window')
+Nmap('<leader>sh', '<C-w>s', 'Split horizontal the window')
