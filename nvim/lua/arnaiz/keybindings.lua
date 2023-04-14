@@ -41,7 +41,7 @@ Nmap('<leader>c', ':% s/', 'Change words')
 Nmap('<leader>t', ':tabnew<CR>', 'Open new tab')
 
 -- Show all the maps
--- Nmap('<leader>m', ':Maps<CR>')
+Nmap('<leader>m', ':Telescope keymaps<CR>')
 
 -- Split the window
 Nmap('<leader>sv', '<C-w>v', 'Split vertical the window')
