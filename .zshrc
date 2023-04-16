@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
-  git common-aliases colored-man-pages
+  git common-aliases colored-man-pages z
 )
 
 # Reload theme
