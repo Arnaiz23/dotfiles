@@ -46,3 +46,6 @@ Nmap('<leader>m', ':Telescope keymaps<CR>')
 -- Split the window
 Nmap('<leader>sv', '<C-w>v', 'Split vertical the window')
 Nmap('<leader>sh', '<C-w>s', 'Split horizontal the window')
+
+-- Live grep
+Nmap('<leader>w', ':Telescope live_grep<CR>', 'Ripgrep')
