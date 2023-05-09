@@ -49,3 +49,6 @@ Nmap('<leader>sh', '<C-w>s', 'Split horizontal the window')
 
 -- Live grep
 Nmap('<leader>w', ':Telescope live_grep<CR>', 'Ripgrep')
+
+-- Fix prettier standard
+Nmap('<leader>p', ':ALEFix standard<CR>', 'Format standard')
