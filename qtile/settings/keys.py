@@ -12,7 +12,7 @@ mod = "mod4"
 
 terminal = "alacritty"
 browser = "firefox"
-secondary_browser = "chromium"
+secondary_browser = "brave"
 explorer = "thunar"
 notes = "inkdrop"
 lock_command = "dm-tool lock"
