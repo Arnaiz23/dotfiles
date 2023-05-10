@@ -34,7 +34,7 @@ packer.startup(function(use)
 	use("L3MON4D3/LuaSnip")
 	use("saadparwaiz1/cmp_luasnip")
 	use("jose-elias-alvarez/null-ls.nvim") -- Inject actions with LSP
-	use("MunifTanjim/prettier.nvim") -- Prettier with LSP
+	-- use("MunifTanjim/prettier.nvim") -- Prettier with LSP
 	use("glepnir/lspsaga.nvim") -- LSP UI
 	use("lukas-reineke/indent-blankline.nvim") -- Indent plugin configuration
 	use("williamboman/mason.nvim") -- Mason

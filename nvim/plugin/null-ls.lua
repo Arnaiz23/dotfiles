@@ -1,5 +1,19 @@
 local status, null_ls = pcall(require, "null-ls")
-if (not status) then return end
+if not status then
+	return
+end
+
+local formatting = null_ls.builtins.formatting
+
+local sources = {
+	formatting.eslint_d,
+	formatting.autopep8,
+	formatting.stylua,
+}
+
+null_ls.setup({
+	sources = sources,
+})
 
 -- local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
 
@@ -22,13 +36,14 @@ if (not status) then return end
 -- 	end,
 -- }
 
-null_ls.setup{
-	-- root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
-	sources = {
-		null_ls.builtins.formatting.fish_indent,
-		null_ls.builtins.diagnostics.fish,
-		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.formatting.shfmt,
-		-- null_ls.builtins.diagnostics.flake8,
-	},
-}
+-- null_ls.setup({
+-- 	-- root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
+-- 	sources = {
+-- 		null_ls.builtins.formatting.fish_indent,
+-- 		null_ls.builtins.diagnostics.fish,
+-- 		null_ls.builtins.formatting.stylua,
+-- 		null_ls.builtins.formatting.shfmt,
+-- 		null_ls.builtins.formatting.eslint_d,
+-- 		-- null_ls.builtins.diagnostics.flake8,
+-- 	},
+-- })
