@@ -52,3 +52,8 @@ Nmap('<leader>w', ':Telescope live_grep<CR>', 'Ripgrep')
 
 -- Fix prettier standard
 Nmap('<leader>p', ':ALEFix standard<CR>', 'Format standard')
+
+-- LSP
+Nmap('gr', ':Telescope lsp_references<CR>', 'LSP References')
+Nmap('gd', ':Telescope lsp_definitions<CR>', 'LSP Definitions')
+
