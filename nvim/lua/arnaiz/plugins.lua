@@ -42,4 +42,7 @@ packer.startup(function(use)
 	use 'akinsho/bufferline.nvim'            -- Tabs custom
 	use 'folke/which-key.nvim'               -- Which key
 	use 'numToStr/Comment.nvim'              -- Comments
+	use 'folke/noice.nvim'                   -- Cmd UI
+	use 'rcarriga/nvim-notify'               -- Nvim notify
+	use 'MunifTanjim/nui.nvim'               -- Cmd UI requirement
 end)
