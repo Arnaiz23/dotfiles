@@ -1,6 +1,6 @@
 # Dotfiles of Adrián Arnaiz
 
-This is the configuration of the Linux terminal. 
+This is the configuration of the Linux terminal.
 
 ## Includes
 
@@ -40,13 +40,13 @@ su arnaiz
 
 - .tmux.conf -> Configuration of tmux
 - nvim -> Folder with nvim configuration
-	- .vimrc -> Global configurations of Vim and Neovim
-	- coc.vim -> Configuration of the coc extension
-	- init.vim -> Configuration of neovim
+  - .vimrc -> Global configurations of Vim and Neovim
+  - coc.vim -> Configuration of the coc extension
+  - init.vim -> Configuration of neovim
 - .zshrc -> Configuration of zsh
 - installers
-	- arch_linux.sh -> Script of the installer in Arch
-	- ubuntu.sh -> Script of the installer in Ubuntu
+  - arch_linux.sh -> Script of the installer in Arch
+  - ubuntu.sh -> Script of the installer in Ubuntu
 - alacritty -> folder with the alacritty configuration
 - qtile -> folder with the qtile configuration
 - scripts -> folder with the system scripts. Ej: ide
@@ -55,8 +55,10 @@ su arnaiz
 
 Configuration of neovim (IDE mode)
 
+**Necessary the xclip in linux for the clipboard**
+
 - Vim-plug -> Installer of vim plugins
-	* `sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
+  - `sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
 
 ## Coc Config (For default is disabled)
 
@@ -77,16 +79,16 @@ Configuration of neovim (IDE mode)
 - Clone the repository
 - Execute the script
 - For neovim:
-	- Execute v and :PlugInstall
-	- Later, execute :CocInstall (If you use Coc, for default disabled)
+  - Execute v and :PlugInstall
+  - Later, execute :CocInstall (If you use Coc, for default disabled)
 - For tmux:
-	- Execute tmux, Ctrl + r and Ctrl + I
+  - Execute tmux, Ctrl + r and Ctrl + I
 
 ## Configurations
 
 ### QTILE
 
-For I can use the qtile extrax, I need to install this command: 
+For I can use the qtile extrax, I need to install this command:
 
 ```bash
 	yay -S qtile-extras-git
@@ -96,9 +98,8 @@ For I can use the qtile extrax, I need to install this command:
 
 - `Ctrl-Space` -> leader
 - `Ctrl-Space [` -> enter in copy mode
-	- vi keys move
+  - vi keys move
 - `leader + ?` -> help commands
-
 
 ## Scripts
 
@@ -109,7 +110,6 @@ For I can use the qtile extrax, I need to install this command:
 ```bash
 	sudo ln -s ~/.dotfiles/scripts/tmux-start.sh /usr/local/bin/${name}
 ```
-
 
 ### Appareance
 
