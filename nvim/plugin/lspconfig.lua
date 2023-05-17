@@ -125,6 +125,21 @@ lspconfig.tailwindcss.setup({
   end,
 })
 
+-- Package.json
+lspconfig.jsonls.setup({
+  on_attach = on_attach,
+  settings = {
+    json = {
+      schemas = {
+	{
+	  fileMatch = { 'package.json' },
+	  url = 'https://json.schemastore.org/package.json',
+	},
+      },
+    },
+  },
+})
+
 --
 -- Diagnostics
 --

@@ -118,3 +118,7 @@ Download the `.zip` of the theme that you want. Copy in the folder `~/.themes` a
 ### GRUB theme
 
 I use the [darkmatter - Linux](https://github.com/VandalByte/darkmatter-grub2-theme)
+
+### Rofi
+
+For the theme of rofi, I use this [repository](https://github.com/newmanls/rofi-themes-collection)
