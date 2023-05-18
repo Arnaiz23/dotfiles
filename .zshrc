@@ -48,6 +48,7 @@ alias py="python3"
 alias cz="git-cz"
 alias bgwp="feh --bg-scale ~/Imágenes/wallpaper.jpg"
 alias zshconfig="v ~/.dotfiles/.zshrc"
+alias qtilelogs="tail --lines 20 ~/.local/share/qtile/qtile.log"
 
 # lazygit
 alias lg="lazygit"
