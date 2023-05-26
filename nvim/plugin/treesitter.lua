@@ -12,6 +12,7 @@ ts.setup {
     disable = {},
   },
   ensure_installed = {
+    "astro",
     "tsx",
     "yaml",
     "css",

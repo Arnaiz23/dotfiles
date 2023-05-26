@@ -15,11 +15,13 @@ from .keys import mod, keys
 # ng-dev-chrome, 
 # nf-dev-terminal, 
 # nf-fa-code, 
-# nf-md-discord, 
+# nf-md-youtube
 # nf-fa-spotify,
 
+# ﭮ  nf-md-discord, 
+
 groups = [Group(i) for i in [
-    "   ", "   ", "   ", " 󰨞 ", " ﭮ  ", "  "
+    "   ", "   ", "   ", " 󰨞 ", " 󰗃  ", "  "
 ]]
 
 for i, group in enumerate(groups):
