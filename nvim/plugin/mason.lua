@@ -28,7 +28,8 @@ mason_lspconfig.setup({
     "html",
     "dockerls",
     "docker_compose_language_service",
-    "pyright"
+    "pyright",
+    "astro"
   },
   automatic_installation = true,
 })

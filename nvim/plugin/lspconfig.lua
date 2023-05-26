@@ -140,6 +140,9 @@ lspconfig.jsonls.setup({
   },
 })
 
+-- Astro config
+lspconfig.astro.setup({})
+
 --
 -- Diagnostics
 --
