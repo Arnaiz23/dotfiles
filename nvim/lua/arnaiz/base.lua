@@ -19,3 +19,6 @@ opt.termguicolors = true
 -- Disable netrw for the nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Auto resize the neovim split when the terminal is resized
+vim.api.nvim_command('autocmd VimResized * wincmd =')
