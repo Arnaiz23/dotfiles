@@ -14,6 +14,9 @@ plugins=(
   git common-aliases colored-man-pages z ssh-agent
 )
 
+zstyle :omz:plugins:ssh-agent helper ksshaskpass
+zstyle :omz:plugins:ssh-agent quiet yes
+
 # Reload theme
 source $ZSH/oh-my-zsh.sh
 
