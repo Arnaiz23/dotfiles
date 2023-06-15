@@ -76,5 +76,11 @@ alias fgrep='fgrep --color=auto'
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
+# Suspend the pc
+alias suspendpc='systemctl suspend'
+
+# Personal scripts
+alias prozis='node ~/Dev/node-scripts/prozis-available/index.js'
+
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
