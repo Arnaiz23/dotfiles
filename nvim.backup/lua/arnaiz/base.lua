@@ -1,16 +1,24 @@
--- Define variables
+-- Variables
 local opt = vim.opt
 
+opt.number = true -- show numbers
+opt.relativenumber = true -- relative numbers
+opt.mouse = "a" -- Activate the mouse
+opt.clipboard = "unnamedplus" -- Copy to the clipboard
+opt.showcmd = true -- show command when I writted
+opt.encoding = "utf-8" -- codification
+opt.showmatch = true -- Show the start and the end of the parenthesis...
+opt.laststatus = 2 -- Bottom menu visible
+opt.numberwidth = 1 -- The width of the numbers
+opt.sw = 2 -- Indent with 2 spaces
+opt.autoindent = true
 
-opt.number = true         -- set numbers
-opt.relativenumber = true -- set relatives numbers
-opt.mouse = "a"           -- Enable the mouse
-opt.numberwidth = 1       -- The width of the numbers
-opt.clipboard = "unnamed" -- That you copy in the visual mode, saved in the clipboard
-opt.showcmd = true        -- show commands when I writted
-opt.encoding = "utf-8"    -- codification
-opt.showmatch = true      -- Show the start and the end of the parenthesis ...
-opt.sw = 2                -- Indent with 2 spaces
-opt.laststatus = 2        -- Bottom menu visible
+vim.cmd 'syntax enable' -- Active the syntax
+opt.termguicolors = true
 
-vim.cmd 'syntax enable'   -- Active the syntax
+-- Disable netrw for the nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Auto resize the neovim split when the terminal is resized
+vim.api.nvim_command('autocmd VimResized * wincmd =')

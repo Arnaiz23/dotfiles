@@ -2,45 +2,53 @@ vim.g.mapleader = ","
 
 -- define a variable to create maps
 
-local opts = { noremap = true, silent = true }
-
-function Map(mode, shorcut, command)
-	vim.api.nvim_set_keymap(mode, shorcut, command, opts)
+function Map(mode, shorcut, command, desc)
+	vim.api.nvim_set_keymap(mode, shorcut, command, { noremap = true, silent = true, desc = desc })
 end
 
-function Nmap(shorcut, command)
-	Map('n', shorcut, command)
+function Nmap(shorcut, command, desc)
+	Map("n", shorcut, command, desc)
 end
 
 -- move beetween panels
-Nmap('<C-h>', '<C-w>h')
-Nmap('<C-l>', '<C-w>l')
-Nmap('<C-j>', '<C-w>j')
-Nmap('<C-k>', '<C-w>k')
+Nmap("<C-h>", "<C-w>h", "Change left panel")
+Nmap("<C-l>", "<C-w>l", "Change right panel")
+Nmap("<C-j>", "<C-w>j", "Change down panel")
+Nmap("<C-k>", "<C-w>k", "Change top panel")
 
--- Work with the nvim tree
-Nmap('<leader>e', ':NvimTreeToggle<CR>')
-Nmap('<leader>o', ':NvimTreeFocus<CR>')
+-- Nvim Tree
+Nmap("<leader>e", ":NvimTreeToggle<CR>", "Toggle nvim tree")
+Nmap("<leader>o", ":NvimTreeFocus<CR>", "Focus nvim tree")
 
--- GIT
-Nmap('<leader>gb', ':Telescope git_branches<CR>')
-Nmap('<leader>gc', ':Telescope git_commits<CR>')
---map('<leader>gl', ':Lazygit<CR>', opts)
+-- Save file
+Nmap("<C-s>", ":w<CR>", "Save file")
 
--- Save
-Nmap('<C-s>', ':w<CR>')
+-- Quit tab
+Nmap("<leader>qq", ":q<CR>", "Quit tab")
 
--- Quit
-Nmap('<leader>q', ':q<CR>')
+-- Quit neovim
+Nmap("<leader>qa", ":qa<CR>", "Quit neovim")
 
--- Find Files
-Nmap('<leader>f', ':Telescope find_files hidden=true<CR>')
+-- Format document
+Nmap("<leader>cf", "gg=G", "Format document")
+
+-- Tabnew
+Nmap("<leader>t", ":tabnew<CR>", "Open new tab")
+
+-- Show maps
+Nmap("<leader>nm", ":Telescope keymaps<CR>", "Show maps")
+
+-- Split the window
+Nmap("<leader>sv", "<C-w>v", "Split vertical the window")
+Nmap("<leader>sh", "<C-w>s", "Split horizontal the window")
+
+-- Find files
+Nmap("<leader>ff", ":Telescope find_files hidden=true<CR>", "Find files")
+Nmap("<leader>fg", ":Telescope live_grep<CR>", "Find words")
+
+-- LSP
+Nmap("<leader>lr", ":Telescope lsp_references<CR>", "LSP References")
+Nmap("<leader>ld", ":Telescope lsp_definitions<CR>", "LSP Definitions")
 
 -- Change words
-Nmap('<leader>g', ':% s/')
-
--- Open new tab
-Nmap('<leader>t', ':tabnew<CR>')
-
--- Show all the maps
-Nmap('<leader>m', ':Maps<CR>')
+Nmap("<leader>cc", ":% s/", "Change words")
