@@ -82,5 +82,8 @@ alias suspendpc='systemctl suspend'
 # Personal scripts
 alias prozis='node ~/Dev/node-scripts/prozis-available/index.js'
 
+# Kill session ide
+alias kide='tmux kill-ses -tide'
+
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
