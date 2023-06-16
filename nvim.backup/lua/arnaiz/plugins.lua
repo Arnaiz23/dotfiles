@@ -41,4 +41,5 @@ packer.startup(function(use)
   use("norcalli/nvim-colorizer.lua") -- Background color hex
   use("lewis6991/gitsigns.nvim") -- Gitsigns
   use("windwp/nvim-ts-autotag") -- Autotag with treesitter
+  use("kdheepak/lazygit.nvim") -- Lazygit within neovim
 end)

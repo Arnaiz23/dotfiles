@@ -52,3 +52,7 @@ Nmap("<leader>ld", ":Telescope lsp_definitions<CR>", "LSP Definitions")
 
 -- Change words
 Nmap("<leader>cc", ":% s/", "Change words")
+
+-- Lazygit
+Nmap("<leader>gl", ":LazyGit<CR>", "Lazygit")
+Nmap("<leader>gh", ":LazyGitFilter<CR>", "Lazygit commits")
