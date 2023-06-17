@@ -11,11 +11,11 @@ else
 	tmux new-session -d -s "$session"
 
 	window=0
-	tmux rename-window -t $session:$window 'editor'
+	tmux rename-window -t $session:$window ''
 	tmux send-keys -t $session:$window 'v' Enter
 
 	window=1
-	tmux new-window -t $session:$window -n 'zsh'
+	tmux new-window -t $session:$window -n ''
 	tmux split-window -t $session:$window -h -p 90
 	tmux select-pane -t $session:$window -t 0
 	tmux split-window -t $session:$window -v
