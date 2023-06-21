@@ -30,7 +30,7 @@ Nmap("<leader>qq", ":q<CR>", "Quit tab")
 Nmap("<leader>qa", ":qa<CR>", "Quit neovim")
 
 -- Format document
-Nmap("<leader>cf", "gg=G", "Format document")
+Nmap("<leader>cf", ":lua vim.lsp.buf.format()<CR>", "Format document")
 
 -- Tabnew
 Nmap("<leader>t", ":tabnew<CR>", "Open new tab")

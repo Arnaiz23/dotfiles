@@ -1,11 +1,20 @@
--- Plugin
-require("arnaiz.plugins")
-
--- Base vim settings
 require("arnaiz.base")
-
--- Theme
+require("arnaiz.plugins")
 require("arnaiz.theme")
-
--- Keybindings
 require("arnaiz.keybindings")
+
+-- Plugins
+require("arnaiz.cmp")
+require("arnaiz.lsp")
+require("arnaiz.indent")
+require("arnaiz.treesitter")
+require("arnaiz.nvim-tree")
+require("arnaiz.lualine")
+require("arnaiz.bufferline")
+require("arnaiz.comment")
+require("arnaiz.gitsigns")
+require("arnaiz.nvim-ts-autotag")
+require("arnaiz.noice")
+require("arnaiz.notify")
+require("arnaiz.lspsaga")
+require("arnaiz.which-key")
