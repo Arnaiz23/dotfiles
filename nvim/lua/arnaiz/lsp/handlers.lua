@@ -61,7 +61,6 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", options())
 	-- keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", options("Format code"))
-	keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", options("LSP info"))
 	keymap(
 		bufnr,
 		"n",

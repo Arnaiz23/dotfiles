@@ -86,6 +86,9 @@ alias prozis='node ~/Dev/node-scripts/prozis-available/index.js'
 # Kill session ide
 alias kide='tmux kill-ses -tide'
 
+# Emoji picker
+alias emoji='emoji-picker' 
+
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
 

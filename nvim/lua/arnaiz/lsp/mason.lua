@@ -1,5 +1,5 @@
 local servers = {
-	-- "bashls",
+	"bashls",
 	-- "yamlls",
 	"quick_lint_js",
 	"tailwindcss",

@@ -49,6 +49,7 @@ Nmap("<leader>fg", ":Telescope live_grep<CR>", "Find words")
 -- LSP
 Nmap("<leader>lr", ":Telescope lsp_references<CR>", "LSP References")
 Nmap("<leader>ld", ":Telescope lsp_definitions<CR>", "LSP Definitions")
+Nmap("<leader>li", ":LspInfo<CR>", "LSP Info")
 
 -- Change words
 Nmap("<leader>cc", ":% s/", "Change words")
