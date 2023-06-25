@@ -14,6 +14,7 @@ null_ls.setup({
 		formatting.prettier.with({ extra_args = { "--no-semi" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
-    -- diagnostics.flake8
+		formatting.beautysh,
+		-- diagnostics.flake8
 	},
 })
