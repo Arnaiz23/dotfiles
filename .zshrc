@@ -10,8 +10,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Selecth the zsh theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# z
 plugins=(
-  git common-aliases colored-man-pages z ssh-agent
+  git common-aliases colored-man-pages ssh-agent
 )
 
 zstyle :omz:plugins:ssh-agent helper ksshaskpass
@@ -87,3 +88,6 @@ alias kide='tmux kill-ses -tide'
 
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
+
+# Activate zoxide
+eval "$(zoxide init zsh)"
