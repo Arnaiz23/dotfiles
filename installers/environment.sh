@@ -21,6 +21,7 @@ do
             sudo systemctl enable gdm.service
             clear
             sudo pacman -S --noconfirm gnome-tweaks
+            clear
             echo "Restart the pc and select gnome before signin."
             exit
             ;;
