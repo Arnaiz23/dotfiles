@@ -20,7 +20,7 @@ do
             sudo systemctl start gdm.service
             sudo systemctl enable gdm.service
             clear
-            sudo pacman -S --noconfirm gnome-tweaks
+            sudo pacman -S --noconfirm gnome-tweaks lxappearance
             clear
             echo "Restart the pc and select gnome before signin."
             exit
