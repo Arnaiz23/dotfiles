@@ -49,13 +49,14 @@ Nmap("<leader>fg", ":Telescope live_grep<CR>", "Find words")
 -- LSP
 Nmap("<leader>lr", ":Telescope lsp_references<CR>", "LSP References")
 Nmap("<leader>ld", ":Telescope lsp_definitions<CR>", "LSP Definitions")
-Nmap("<leader>li", ":LspInfo<CR>", "LSP Info")
+Nmap("<leader>li", ":LspInfo<CR>", "LSP Infot")
 Nmap("<leader>ln", ":NullLsInfo<CR>", "NullLs Info")
 
 -- Change words
 Nmap("<leader>cc", ":% s/", "Change words")
 
--- Lazygit
+-- Lazygit / Git
 Nmap("<leader>gl", ":LazyGit<CR>", "Lazygit")
 Nmap("<leader>gh", ":LazyGitFilter<CR>", "Lazygit commits")
+Nmap("<leader>gc", ":Telescope git_commits<CR>", "Git commits")
 
