@@ -94,3 +94,6 @@ alias emoji='emoji-picker'
 
 # Activate zoxide
 eval "$(zoxide init zsh)"
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
