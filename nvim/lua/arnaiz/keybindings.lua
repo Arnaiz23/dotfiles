@@ -23,8 +23,11 @@ Nmap("<leader>o", ":NvimTreeFocus<CR>", "Focus nvim tree")
 -- Save file
 Nmap("<C-s>", ":w<CR>", "Save file")
 
+-- Quit window
+Nmap("<leader>qq", ":q<CR>", "Quit window")
+
 -- Quit tab
-Nmap("<leader>qq", ":q<CR>", "Quit tab")
+Nmap("<leader>qt", ":tabclose<CR>", "Quit tab")
 
 -- Quit neovim
 Nmap("<leader>qa", ":qa<CR>", "Quit neovim")
