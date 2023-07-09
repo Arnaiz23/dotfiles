@@ -15,6 +15,6 @@ case "$chosen" in
     "  Lock")
         slock
         ;;
-    *) echo default
+    *) exit 1
         ;;
 esac

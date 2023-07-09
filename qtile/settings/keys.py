@@ -21,6 +21,7 @@ menu = "rofi -show drun"
 screenshot = "flameshot gui"
 emoji_launcher = "emoji-picker"
 # emoji_launcher = "rofi -show emoji -modi emoji"
+power_launcher = "power_rofi"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -96,6 +97,9 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # inkdrop
     ([mod], "i", lazy.spawn(notes)),
+
+    # power launcher
+    ([mod, "shift"], "q", lazy.spawn(power_launcher)),
 
     # ------------ Hardware Configs ------------
 
