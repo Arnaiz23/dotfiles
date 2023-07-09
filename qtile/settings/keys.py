@@ -19,6 +19,8 @@ notes = "inkdrop"
 lock_command = "slock"
 menu = "rofi -show drun"
 screenshot = "flameshot gui"
+emoji_launcher = "emoji-picker"
+# emoji_launcher = "rofi -show emoji -modi emoji"
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -90,7 +92,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     #([mod, "shift"], "s", lazy.spawn("scrot -s")),
 
     # Emojis
-    ([mod], "g", lazy.spawn("emoji-picker")),
+    ([mod], "g", lazy.spawn(emoji_launcher)),
 
     # inkdrop
     ([mod], "i", lazy.spawn(notes)),
