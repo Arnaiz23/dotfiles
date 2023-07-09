@@ -187,6 +187,28 @@ primary_widgets = [
     ]),
 
     widget.TextBox(text=" ", background=colors["dark"]),
+
+    # icon(bg="dark",fg="color6", text='⏻ ', bordercolor="color6"), # Icon: nf-fa-download
+    
+    widget.TextBox(
+        background = colors["dark"],
+        foreground = colors["color6"],
+        fontsize=16,
+        text='⏻ ',
+        padding=3,
+        decorations=[
+            BorderDecoration(
+                border_width = [0, 0, 2, 0],
+                colour=colors["color6"],
+                padding_x = None,
+                padding_y = None
+            )
+        ],
+        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('power_rofi')}
+    ),
+
+    widget.TextBox(text=" ", background=colors["dark"]),
+
 ]
 
 secondary_widgets = [
