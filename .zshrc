@@ -89,6 +89,12 @@ alias kide='tmux kill-ses -tide'
 # Emoji picker
 alias emoji='emoji-picker' 
 
+# Actual manga / manwha
+alias manga="python3 ~/Dev/python/actualManga/index.py"
+
+# Download the curriculum
+alias curriculum="curl https://arnaizdev.com/api/curriculum --output ~/Documentos/curriculum.pdf"
+
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
 
