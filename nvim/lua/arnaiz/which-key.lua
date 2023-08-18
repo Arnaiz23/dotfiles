@@ -18,6 +18,7 @@ local mappings = {
 	},
 	n = {
 		name = "Neovim",
+    q = "Quit terminal <C-\\><C-n>"
 	},
 	f = {
 		name = "Find",

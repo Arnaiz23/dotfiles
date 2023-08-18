@@ -63,3 +63,5 @@ Nmap("<leader>gl", ":LazyGit<CR>", "Lazygit")
 Nmap("<leader>gh", ":LazyGitFilter<CR>", "Lazygit commits")
 Nmap("<leader>gc", ":Telescope git_commits<CR>", "Git commits")
 
+-- Terminal
+Nmap("<leader>nt", ":terminal<CR>", "Open a terminal in a tab")
