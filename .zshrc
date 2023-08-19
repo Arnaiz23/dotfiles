@@ -95,6 +95,9 @@ alias manga="python3 ~/Dev/python/actualManga/index.py"
 # Download the curriculum
 alias curriculum="curl https://arnaizdev.com/api/curriculum --output ~/Documentos/curriculum.pdf"
 
+# Show ssh logs
+alias ssh-logs="journalctl -u sshd | tail -n 100 | cat --language=log"
+
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
 
