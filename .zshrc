@@ -98,6 +98,9 @@ alias curriculum="curl https://arnaizdev.com/api/curriculum --output ~/Documento
 # Show ssh logs
 alias ssh-logs="journalctl -u sshd | tail -n 100 | cat --language=log"
 
+# Create new tmux
+alias tmuxn="tmux new -s "
+
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
 
