@@ -43,6 +43,7 @@ export NVM_DIR=$HOME/.nvm
 alias treel="exa --icons --tree -L 1 -I node_modules"
 alias tree="tree -I node_modules"
 alias ls="exa --icons"
+alias la="exa -l -a --icons"
 alias grep="grep --color"
 alias cat="bat"
 alias gitlog="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
