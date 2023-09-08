@@ -17,7 +17,7 @@ plugins=(
 
 zstyle :omz:plugins:ssh-agent helper ksshaskpass
 zstyle :omz:plugins:ssh-agent quiet yes
-zstyle :omz:plugins:ssh-agent lazy yes
+zstyle :omz:plugins:ssh-agent identities homeserver
 
 # Reload theme
 source $ZSH/oh-my-zsh.sh
@@ -54,7 +54,7 @@ alias v="nvim"
 alias py="python3"
 alias cz="git-cz"
 alias bgwp="feh --bg-scale ~/Imágenes/wallpaper.jpg"
-alias zshconfig="v ~/.dotfiles/.zshrc"
+alias zshconfig="v ~/.dotfiles/shell/zsh/.zshrc"
 alias qtilelogs="tail --lines 20 ~/.local/share/qtile/qtile.log"
 alias dotfiles="cd ~/.dotfiles"
 
