@@ -38,18 +38,15 @@ su arnaiz
 
 ## Structure of repository
 
-- .tmux.conf -> Configuration of tmux
-- nvim -> Folder with nvim configuration
-  - .vimrc -> Global configurations of Vim and Neovim
-  - coc.vim -> Configuration of the coc extension
-  - init.vim -> Configuration of neovim
-- .zshrc -> Configuration of zsh
-- installers
-  - arch_linux.sh -> Script of the installer in Arch
-  - ubuntu.sh -> Script of the installer in Ubuntu
-- alacritty -> folder with the alacritty configuration
-- qtile -> folder with the qtile configuration
-- scripts -> folder with the system scripts. Ej: ide
+- editors
+  - nvim: Nvim configuration
+  - code: VSCode configuration
+- os
+  - linux: Linux and linux app Configurations
+  - apps: Configurations of global applications
+- scripts: Folder with all custom scripts
+- shell
+  - zsh: Folder with all the zsh configuration
 
 ## Neovim / Vim
 
@@ -57,36 +54,24 @@ Configuration of neovim (IDE mode)
 
 **Necessary the xclip in linux for the clipboard**
 
-- Vim-plug -> Installer of vim plugins
-  - `sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
+// TODO
 
-## Coc Config (For default is disabled)
+- Execute: `:PackerInstall`
 
-- Copy the coc-settings.json in the :CocConfig
+## TMUX
 
-## Coc extensions
+Create a symbolic link in ~/ from $DOTFILES_PATH/os/apps/tmux/.tmux.conf
 
-- coc-html # Extension para html
-- coc-eslint # Extension para eslint
-- coc-tsserver # Extension para JS y TS
-- coc-json # Extension para json
-- coc-docker # Extension para Dockerfile
-- coc-css # Extension para CSS
-- @yaegassy/coc-tailwindcss3 # Extension para TailwindCSS
+- Execute:
+  - `tmux`
+  - `Ctrl + r and Ctrl + I`
+- Other keybindings
+- `Ctrl-Space` -> leader
+- `Ctrl-Space [` -> enter in copy mode
+  - vi keys move
+- `leader + ?` -> help commands
 
-## Another instructions
-
-- Clone the repository
-- Execute the script
-- For neovim:
-  - Execute v and :PlugInstall
-  - Later, execute :CocInstall (If you use Coc, for default disabled)
-- For tmux:
-  - Execute tmux, Ctrl + r and Ctrl + I
-
-## Configurations
-
-### QTILE
+## QTILE
 
 For I can use the qtile extrax, I need to install this command:
 
@@ -94,21 +79,16 @@ For I can use the qtile extrax, I need to install this command:
 	yay -S qtile-extras-git
 ```
 
-### TMUX
-
-- `Ctrl-Space` -> leader
-- `Ctrl-Space [` -> enter in copy mode
-  - vi keys move
-- `leader + ?` -> help commands
-
 ## Scripts
 
 - tmux-start.sh -> script for create a tmux ide
+- tmux-session.sh -> With gum, create a menu that show you all the tmux sessions and access it.
+- power_rofi.sh -> Custom script for show you all the PC energy options (Power off, Restart, Suspend, Lock)
 
 ### Uses
 
 ```bash
-	sudo ln -s ~/.dotfiles/scripts/tmux-start.sh /usr/local/bin/${name}
+	sudo ln -s ~/.dotfiles/scripts/${script_name} /usr/local/bin/${name}
 ```
 
 ### Appareance
@@ -121,4 +101,4 @@ I use the [darkmatter - Linux](https://github.com/VandalByte/darkmatter-grub2-th
 
 ### Rofi
 
-For the theme of rofi, I use this [repository](https://github.com/newmanls/rofi-themes-collection)
+For the theme of rofi, I use this [repository](https://github.com/newmanls/rofi-themes-collection) or you can use the Nord Theme that I have in `$DOTFILES_PATH/os/linux/rofi/themes/nord.rasi`

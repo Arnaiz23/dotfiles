@@ -59,6 +59,7 @@ alias dotfiles="cd ~/.dotfiles"
 
 # lazygit
 alias lg="lazygit"
+alias lzd="lazydocker"
 
 # delete node_modules
 alias nmkill="npx npkill"
