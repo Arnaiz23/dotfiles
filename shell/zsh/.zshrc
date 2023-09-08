@@ -17,7 +17,7 @@ plugins=(
 
 zstyle :omz:plugins:ssh-agent helper ksshaskpass
 zstyle :omz:plugins:ssh-agent quiet yes
-zstyle :omz:plugins:ssh-agent identities homeserver
+zstyle :omz:plugins:ssh-agent identities homeserver id_ed25519
 
 # Reload theme
 source $ZSH/oh-my-zsh.sh
