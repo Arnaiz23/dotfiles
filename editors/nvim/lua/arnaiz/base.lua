@@ -55,3 +55,8 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+-- Change directorie in Neovim when you open a file or folder quickly. Like you are in "$HOME" and you open ".ssh/config", the default cwd are $HOME but with this option the cwd is ".ssh/config"
+vim.cmd [[
+  autocmd BufRead,BufNewFile * :cd %:p:h
+]]
