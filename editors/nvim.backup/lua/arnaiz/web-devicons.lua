@@ -8,4 +8,11 @@ icons.setup({
 	-- DevIcon will be appended to `name`
 	default = true,
 	strict = true,
+	override_by_extension = {
+		["astro"] = {
+			icon = "",
+			color = "#fff",
+			name = "Astro",
+		},
+	}
 })
