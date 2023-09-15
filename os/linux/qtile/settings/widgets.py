@@ -1,5 +1,4 @@
 import psutil
-import socket
 from libqtile import widget, qtile
 from .theme import colors
 
@@ -251,7 +250,7 @@ extension_defaults = widget_defaults.copy()
 
 bottom_widgets = [
     separator(),
-    widget.TextBox(text=f"IP: {socket.gethostbyname(socket.gethostname())}"),
+    widget.TextBox(text=f"IP: {psutil.net_if_addrs()[red_device][0][1]}"),
     separator(),
     widget.CapsNumLockIndicator(
         **base(fg="color6"),
