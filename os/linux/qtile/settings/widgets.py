@@ -82,6 +82,36 @@ primary_widgets = [
     # System icons
     widget.Systray(background=colors["dark"], padding=5),
     widget.TextBox(text=" ", background=colors["dark"]),
+    widget.WidgetBox(
+        text_open="󱃥 ",
+        text_closed="󱃦 ",
+        background=colors["dark"],
+        widgets=[
+            widget.TextBox(text=" ", background=colors["dark"]),
+            widget.TextBox(
+                text=f"󰩠: {psutil.net_if_addrs()[red_device][0][1]}",
+                background=colors["dark"],
+                foreground=colors["color2"],
+                decorations=[
+                    BorderDecoration(
+                        colour=colors["color2"],
+                        border_width=[0, 0, 2, 0],
+                    )
+                ],
+            ),
+            widget.TextBox(text=" ", background=colors["dark"]),
+            widget.CapsNumLockIndicator(
+                **base(fg="color7"),
+                decorations=[
+                    BorderDecoration(
+                        colour=colors["color7"],
+                        border_width=[0, 0, 2, 0],
+                    )
+                ],
+            ),
+        ],
+    ),
+    widget.TextBox(text=" ", background=colors["dark"]),
     # Updates
     icon(
         bg="dark", fg="color6", text=" ", bordercolor="color6"
@@ -247,18 +277,3 @@ widget_defaults = {
     "padding": 1,
 }
 extension_defaults = widget_defaults.copy()
-
-bottom_widgets = [
-    separator(),
-    widget.TextBox(text=f"IP: {psutil.net_if_addrs()[red_device][0][1]}"),
-    separator(),
-    widget.CapsNumLockIndicator(
-        **base(fg="color6"),
-        decorations=[
-            BorderDecoration(
-                colour=colors["color6"],
-                border_width=[0, 0, 2, 0],
-            )
-        ],
-    ),
-]

@@ -7,7 +7,7 @@
 from libqtile.config import Screen
 from libqtile import bar
 from libqtile.log_utils import logger
-from .widgets import primary_widgets, secondary_widgets, bottom_widgets
+from .widgets import primary_widgets, secondary_widgets
 import subprocess
 
 
@@ -17,7 +17,7 @@ def status_bar(widgets):
 
 
 # top -> position of the status_bar (top, bottom)
-screens = [Screen(top=status_bar(primary_widgets), bottom=bar.Bar(bottom_widgets, 20, opacity=0.92, background="#130f40"))]
+screens = [Screen(top=status_bar(primary_widgets))]
 
 xrandr = "xrandr | grep -w 'connected' | cut -d ' ' -f 2 | wc -l"
 
