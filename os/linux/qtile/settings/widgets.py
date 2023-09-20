@@ -123,10 +123,11 @@ primary_widgets = [
         no_update_string="0",
         display_format="{updates}",
         update_interval=1800,
-        custom_command="checkupdates",
+        # custom_command="checkupdates",
         mouse_callbacks={
             "Button1": lambda: qtile.cmd_spawn(myTerm + " -e sudo pacman -Syu")
         },
+        distro = "Arch",
         decorations=[
             BorderDecoration(
                 border_width=[0, 0, 2, 0],
