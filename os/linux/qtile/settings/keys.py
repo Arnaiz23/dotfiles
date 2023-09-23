@@ -15,6 +15,7 @@ browser = "firefox"
 secondary_browser = "brave"
 explorer = "thunar"
 notes = "inkdrop"
+music = "spotify"
 #lock_command = "dm-tool lock"
 lock_command = "slock"
 menu = "rofi -show drun"
@@ -100,6 +101,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # power launcher
     ([mod, "shift"], "q", lazy.spawn(power_launcher)),
+
+    ([mod], "p", lazy.spawn(music)),
 
     # ------------ Hardware Configs ------------
 

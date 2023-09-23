@@ -105,6 +105,9 @@ alias ssh-logs="journalctl -u sshd | tail -n 100 | cat --language=log"
 # Create new tmux
 alias tmuxn="tmux new -s "
 
+# Pacman count updates
+alias pacmanc="pacman -Qu | wc -l"
+
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
 
