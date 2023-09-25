@@ -30,6 +30,7 @@ zgen load zsh-users/zsh-completions
 zgen oh-my-zsh plugins/sudo
 
 export PAGER="less"
+export EDITOR="nvim"
 
 # node
 export NVM_DIR=$HOME/.nvm
