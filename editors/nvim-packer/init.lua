@@ -23,11 +23,11 @@ require("arnaiz.web-devicons")
 
 -- Nvim-tree setup (I don't know why nvim don't recognize the nvim-tree file setup)
 require("nvim-tree").setup {
- sort_by = "case_sensitive",
- renderer = {
-   group_empty = true
- },
- filters = {
-   dotfiles = false
- }
+  sort_by = "case_sensitive",
+  renderer = {
+    group_empty = true
+  },
+  filters = {
+    dotfiles = false
+  }
 }

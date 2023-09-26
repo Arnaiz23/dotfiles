@@ -1,92 +1,120 @@
-local status, packer = pcall(require, "packer")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
+
+local status, lazy = pcall(require, "lazy")
 if not status then
-	print("Packer is not installed")
+	print("Lazy is not installed")
 	return
 end
 
-vim.cmd([[packadd packer.nvim]])
-
-packer.startup(function(use)
-	use("wbthomason/packer.nvim")
-
+local plugins = {
 	-- Theme
-	use("folke/tokyonight.nvim")
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+
+  -- File Explorer
+	{
+		"nvim-tree/nvim-tree.lua",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
+
+  -- Treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = function()
+			pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
+	},
 
 	-- LSP
-	use("neovim/nvim-lspconfig") -- enable LSP
+	"neovim/nvim-lspconfig",
 
 	-- cmp plugins
-	use("hrsh7th/nvim-cmp") -- The completion plugin
-	use("hrsh7th/cmp-buffer") -- buffer completions
-	use("hrsh7th/cmp-path") -- path completions
-	use("hrsh7th/cmp-cmdline") -- cmdline completions
-	use("saadparwaiz1/cmp_luasnip") -- snippet completions
-	use("hrsh7th/cmp-nvim-lsp")
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-cmdline",
+	"saadparwaiz1/cmp_luasnip",
+	"hrsh7th/cmp-nvim-lsp",
 
 	-- snippets
-	use("L3MON4D3/LuaSnip") -- snippet engine
-	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+	"L3MON4D3/LuaSnip",
+	"rafamadriz/friendly-snippets",
 
 	-- Mason
-	use("williamboman/mason.nvim") -- Mason
-	use("williamboman/mason-lspconfig.nvim") -- MasonLSP
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
 
 	-- NullLS
-	use("jose-elias-alvarez/null-ls.nvim") -- For formatters and linters
+	"jose-elias-alvarez/null-ls.nvim",
 
 	-- Telescope
-	use("nvim-telescope/telescope.nvim")
-	use("nvim-lua/plenary.nvim") -- Telescope requirement
+	"nvim-telescope/telescope.nvim",
+	"nvim-lua/plenary.nvim",
 
 	-- Indent
-	use("lukas-reineke/indent-blankline.nvim")
-
-	-- Treesitter
-	use("nvim-treesitter/nvim-treesitter")
+	"lukas-reineke/indent-blankline.nvim",
 
 	-- Autopairs
-	use("jiangmiao/auto-pairs")
-
-	-- File Explorer
-	use("nvim-tree/nvim-tree.lua")
+	"jiangmiao/auto-pairs",
 
 	-- Lualine
-	use("nvim-lualine/lualine.nvim")
-
-	-- Icons
-	use("kyazdani42/nvim-web-devicons")
+	"nvim-lualine/lualine.nvim",
 
 	-- CMD UI
-	use("MunifTanjim/nui.nvim")
-	use("folke/noice.nvim")
+	"MunifTanjim/nui.nvim",
+	"folke/noice.nvim",
 
 	-- Notify
-	use("rcarriga/nvim-notify")
+	"rcarriga/nvim-notify",
 
 	-- Custom tabs
-	use("akinsho/bufferline.nvim")
+	"akinsho/bufferline.nvim",
 
 	-- Comments
-	use("numToStr/Comment.nvim")
+	"numToStr/Comment.nvim",
 
 	-- Which key
-	use("folke/which-key.nvim")
+	"folke/which-key.nvim",
 
 	-- LSP UI
-	use("glepnir/lspsaga.nvim")
+	"glepnir/lspsaga.nvim",
 
 	-- Tailwind background colors
-	use("princejoogie/tailwind-highlight.nvim")
+	"princejoogie/tailwind-highlight.nvim",
 
 	-- Background color hex
-	use("norcalli/nvim-colorizer.lua")
+	"norcalli/nvim-colorizer.lua",
 
 	-- Gitsigns
-	use("lewis6991/gitsigns.nvim")
+	"lewis6991/gitsigns.nvim",
 
 	-- Autotag
-	use("windwp/nvim-ts-autotag")
+	"windwp/nvim-ts-autotag",
 
 	-- Lazygit
-	use("kdheepak/lazygit.nvim")
-end)
+	"kdheepak/lazygit.nvim",
+}
+
+local opts = {}
+
+lazy.setup(plugins, opts)
