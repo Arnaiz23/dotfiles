@@ -65,3 +65,9 @@ Nmap("<leader>gc", ":Telescope git_commits<CR>", "Git commits")
 
 -- Terminal
 Nmap("<leader>nt", ":terminal<CR>", "Open a terminal in a tab")
+
+-- Databases
+Nmap("<leader>nd", ":DBUI<CR>", "Open database clients")
+
+-- Lazy
+Nmap("<leader>nl", ":Lazy<CR>", "Open Lazy")

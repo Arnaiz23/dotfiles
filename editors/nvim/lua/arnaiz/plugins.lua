@@ -26,7 +26,7 @@ local plugins = {
 		opts = {},
 	},
 
-  -- File Explorer
+	-- File Explorer
 	{
 		"nvim-tree/nvim-tree.lua",
 		dependencies = {
@@ -34,7 +34,7 @@ local plugins = {
 		},
 	},
 
-  -- Treesitter
+	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = function()
@@ -72,7 +72,7 @@ local plugins = {
 	"nvim-lua/plenary.nvim",
 
 	-- Indent
-	"lukas-reineke/indent-blankline.nvim",
+	{ "lukas-reineke/indent-blankline.nvim", version = "2.20.8" },
 
 	-- Autopairs
 	"jiangmiao/auto-pairs",
@@ -113,6 +113,10 @@ local plugins = {
 
 	-- Lazygit
 	"kdheepak/lazygit.nvim",
+
+	-- Database
+  "tpope/vim-dadbod",
+	"kristijanhusak/vim-dadbod-ui",
 }
 
 local opts = {}
