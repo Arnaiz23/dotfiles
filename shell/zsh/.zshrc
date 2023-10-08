@@ -109,6 +109,9 @@ alias tmuxn="tmux new -s "
 # Pacman count updates
 alias pacmanc="pacman -Qu | wc -l"
 
+# Find with fzf
+alias findf='v $(find . | fzf)'
+
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
 
