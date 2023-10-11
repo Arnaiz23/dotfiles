@@ -54,6 +54,7 @@ Nmap("<leader>lr", ":Telescope lsp_references<CR>", "LSP References")
 Nmap("<leader>ld", ":Telescope lsp_definitions<CR>", "LSP Definitions")
 Nmap("<leader>li", ":LspInfo<CR>", "LSP Info")
 Nmap("<leader>ln", ":NullLsInfo<CR>", "NullLs Info")
+Nmap("<leader>lR", ":LspRestart<CR>", "Restart LSP")
 
 -- Change words
 Nmap("<leader>cc", ":% s/", "Change words")
