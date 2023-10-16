@@ -83,6 +83,7 @@ primary_widgets = [
     widget.Systray(background=colors["dark"], padding=5),
     widget.TextBox(text=" ", background=colors["dark"]),
     widget.WidgetBox(
+        start_opened=True,
         text_open="󱃥 ",
         text_closed="󱃦 ",
         background=colors["dark"],
@@ -127,7 +128,7 @@ primary_widgets = [
         mouse_callbacks={
             "Button1": lambda: qtile.cmd_spawn(myTerm + " -e sudo pacman -Syu")
         },
-        distro = "Arch",
+        distro="Arch",
         decorations=[
             BorderDecoration(
                 border_width=[0, 0, 2, 0],
