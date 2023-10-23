@@ -34,8 +34,8 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod], "l", lazy.layout.right()),
 
     # Change window sizes (MonadTall)
-    ([mod, "shift"], "l", lazy.layout.grow()),
-    ([mod, "shift"], "h", lazy.layout.shrink()),
+    ([mod, "shift"], "h", lazy.layout.grow()),
+    ([mod, "shift"], "l", lazy.layout.shrink()),
 
     # Toggle floating
     ([mod, "shift"], "f", lazy.window.toggle_floating()),
