@@ -16,6 +16,11 @@ Nmap("<C-l>", "<C-w>l", "Change right panel")
 Nmap("<C-j>", "<C-w>j", "Change down panel")
 Nmap("<C-k>", "<C-w>k", "Change top panel")
 
+Nmap("<C-w><left>", "<C-w><", "Resize - Decrease width")
+Nmap("<C-w><right>", "<C-w>>", "Resize - Increase width")
+Nmap("<C-w><up>", "<C-w>+", "Resize - Increase height")
+Nmap("<C-w><down>", "<C-w>-", "Resize - Decrease height")
+
 -- Nvim Tree
 Nmap("<leader>e", ":NvimTreeToggle<CR>", "Toggle nvim tree")
 Nmap("<leader>o", ":NvimTreeFocus<CR>", "Focus nvim tree")
@@ -51,7 +56,6 @@ Nmap("<leader>fg", ":Telescope live_grep<CR>", "Find words")
 
 -- LSP
 Nmap("<leader>lr", ":Telescope lsp_references<CR>", "LSP References")
-Nmap("<leader>ld", ":Telescope lsp_definitions<CR>", "LSP Definitions")
 Nmap("<leader>li", ":LspInfo<CR>", "LSP Info")
 Nmap("<leader>ln", ":NullLsInfo<CR>", "NullLs Info")
 Nmap("<leader>lR", ":LspRestart<CR>", "Restart LSP")

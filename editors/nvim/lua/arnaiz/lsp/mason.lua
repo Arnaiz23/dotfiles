@@ -15,7 +15,8 @@ local servers = {
 	"pyright",
 	"astro",
   "prismals",
-  "stylelint_lsp"
+  "stylelint_lsp",
+  "marksman"
 }
 
 local settings = {

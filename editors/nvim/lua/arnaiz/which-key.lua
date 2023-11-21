@@ -25,6 +25,7 @@ local mappings = {
 	},
 	l = {
 		name = "LSP",
+    d = "Open definition"
 	},
 }
 
