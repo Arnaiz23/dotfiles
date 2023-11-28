@@ -76,6 +76,9 @@ local function lsp_keymaps(bufnr)
 		options("Go to the prev error")
 	)
 	keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", options("Rename"))
+  vim.keymap.set("n", "<leader>ld", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", {
+    buffer = bufnr
+  })
 end
 
 M.on_attach = function(client, bufnr)
