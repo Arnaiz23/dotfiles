@@ -14,9 +14,11 @@ local servers = {
 	"docker_compose_language_service",
 	"pyright",
 	"astro",
-  "prismals",
-  "stylelint_lsp",
-  "marksman"
+	"prismals",
+	"stylelint_lsp",
+	"marksman",
+	"gopls",
+	"phpactor",
 }
 
 local settings = {
