@@ -76,3 +76,7 @@ Nmap("<leader>nd", ":DBUI<CR>", "Open database clients")
 
 -- Lazy
 Nmap("<leader>nl", ":Lazy<CR>", "Open Lazy")
+
+-- Oil
+Nmap("<leader>nf", ":Oil --float<CR>", "Open Oil float")
+Nmap("<leader>no", ":Oil<CR>", "Open Oil")

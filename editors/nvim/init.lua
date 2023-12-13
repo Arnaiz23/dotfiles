@@ -19,6 +19,7 @@ require("arnaiz.notify")
 require("arnaiz.lspsaga")
 require("arnaiz.which-key")
 require("arnaiz.web-devicons")
+require("arnaiz.oil")
 
 
 -- Nvim-tree setup (I don't know why nvim don't recognize the nvim-tree file setup)
