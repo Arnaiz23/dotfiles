@@ -23,6 +23,9 @@ local mappings = {
 	f = {
 		name = "Find",
 	},
+	t = {
+		name = "TreeSitter",
+	},
 	l = {
 		name = "LSP",
     d = "Open definition"
