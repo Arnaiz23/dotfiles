@@ -82,4 +82,4 @@ Nmap("<leader>nf", ":Oil --float<CR>", "Open Oil float")
 Nmap("<leader>no", ":Oil<CR>", "Open Oil")
 
 -- TreeSitter
-Nmap("<leader>tb", ":TSBufToggle highlight<CR>", "Toggle the buf highlight")
+Nmap("<leader>ctb", ":TSBufToggle highlight<CR>", "Toggle the buf highlight")
