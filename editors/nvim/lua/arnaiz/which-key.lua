@@ -15,20 +15,20 @@ local mappings = {
 	},
 	c = {
 		name = "Code",
+		t = {
+			name = "TreeSitter",
+		},
 	},
 	n = {
 		name = "Neovim",
-    q = "Quit terminal <C-\\><C-n>"
+		q = "Quit terminal <C-\\><C-n>",
 	},
 	f = {
 		name = "Find",
 	},
-	t = {
-		name = "TreeSitter",
-	},
 	l = {
 		name = "LSP",
-    d = "Open definition"
+		d = "Open definition",
 	},
 }
 
