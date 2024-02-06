@@ -113,8 +113,13 @@ alias tmuxn="tmux new -s "
 # Pacman count updates
 alias pacmanc="pacman -Qu | wc -l"
 
+# fzf aliases
 # Find with fzf
 alias findf='v $(find . | fzf)'
+# use fp to do a fzf search and preview the files
+alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+# search for a file with fzf and open it in vim
+alias vf='v $(fp)'
 
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
