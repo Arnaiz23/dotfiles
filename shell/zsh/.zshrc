@@ -7,6 +7,9 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Create custom ENV
+export DOTFILES="$HOME/.dotfiles"
+
 # Selecth the zsh theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
