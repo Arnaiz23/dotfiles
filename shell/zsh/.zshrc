@@ -122,8 +122,6 @@ eval "$(zoxide init zsh)"
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
-neofetch
-
 # bun completions
 [ -s "/home/arnaiz/.bun/_bun" ] && source "/home/arnaiz/.bun/_bun"
 
