@@ -52,6 +52,7 @@ alias gitlog="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %
 alias gc="git commit"
 alias gpo="git push origin"
 alias v="nvim"
+alias t="tmux"
 alias py="python3"
 alias cz="git-cz"
 alias bgwp="feh --bg-scale ~/Imágenes/wallpaper.jpg"
