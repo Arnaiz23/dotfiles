@@ -22,8 +22,8 @@ Nmap("<C-w><up>", "<C-w>+", "Resize - Increase height")
 Nmap("<C-w><down>", "<C-w>-", "Resize - Decrease height")
 
 -- Nvim Tree
-Nmap("<leader>e", ":NvimTreeToggle<CR>", "Toggle nvim tree")
-Nmap("<leader>o", ":NvimTreeFocus<CR>", "Focus nvim tree")
+Nmap("<leader>e", ":Ex<CR>", "Open netrw")
+Nmap("<leader>o", ":Vex<CR>", "Vertical split netrw")
 
 -- Save file
 Nmap("<C-s>", ":w<CR>", "Save file")

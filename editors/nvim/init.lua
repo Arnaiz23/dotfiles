@@ -8,7 +8,6 @@ require("arnaiz.cmp")
 require("arnaiz.lsp")
 require("arnaiz.indent")
 require("arnaiz.treesitter")
--- require("arnaiz.nvim-tree")
 require("arnaiz.lualine")
 require("arnaiz.bufferline")
 require("arnaiz.comment")
@@ -20,15 +19,3 @@ require("arnaiz.lspsaga")
 require("arnaiz.which-key")
 require("arnaiz.web-devicons")
 require("arnaiz.oil")
-
-
--- Nvim-tree setup (I don't know why nvim don't recognize the nvim-tree file setup)
-require("nvim-tree").setup {
- sort_by = "case_sensitive",
- renderer = {
-   group_empty = true
- },
- filters = {
-   dotfiles = false
- }
-}
