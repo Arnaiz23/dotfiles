@@ -20,10 +20,10 @@ end
 local plugins = {
   -- Theme
   {
-  	"folke/tokyonight.nvim",
-  	lazy = false,
-  	priority = 1000,
-  	opts = {},
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   },
 
   -- Treesitter
@@ -82,7 +82,12 @@ local plugins = {
   { "lukas-reineke/indent-blankline.nvim", version = "2.20.8" },
 
   -- Autopairs
-  "jiangmiao/auto-pairs",
+  -- "jiangmiao/auto-pairs",
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+  },
 
   -- Lualine
   "nvim-lualine/lualine.nvim",
