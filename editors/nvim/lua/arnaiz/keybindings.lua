@@ -83,3 +83,6 @@ Nmap("<leader>no", ":Oil<CR>", "Open Oil")
 
 -- TreeSitter
 Nmap("<leader>ctb", ":TSBufToggle highlight<CR>", "Toggle the buf highlight")
+
+-- Clear the search
+Nmap("<leader>nc", ":noh<CR>", "Clear the search highlights")
