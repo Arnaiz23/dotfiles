@@ -137,4 +137,8 @@ source /usr/share/fzf/completion.zsh
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 export PATH=$HOME/go/bin:$PATH
