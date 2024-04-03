@@ -103,7 +103,6 @@ alias manga="python3 ~/Dev/python/actualManga/index.py"
 
 # Download the curriculum
 alias curriculum="curl https://arnaizdev.com/api/curriculum --output ~/Documentos/curriculum.pdf"
-
 # Show ssh logs
 alias ssh-logs="journalctl -u sshd | tail -n 100 | cat --language=log"
 
@@ -141,4 +140,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# cargo
+export PATH="$HOME/.cargo/env:$PATH"
+
+# go
 export PATH=$HOME/go/bin:$PATH
