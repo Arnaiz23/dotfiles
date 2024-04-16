@@ -142,6 +142,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 # cargo
 export PATH="$HOME/.cargo/env:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # go
 export PATH=$HOME/go/bin:$PATH
