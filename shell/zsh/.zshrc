@@ -91,6 +91,7 @@ alias suspendpc='systemctl suspend'
 
 # Personal scripts
 alias prozis='node ~/Dev/node-scripts/prozis-available/index.js'
+alias inkdrop-latest='sh $DOTFILES/scripts/inkdrop-latest.sh'
 
 # Kill session ide
 alias kide='tmux kill-ses -tide'
