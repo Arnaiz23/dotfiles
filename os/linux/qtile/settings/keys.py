@@ -60,7 +60,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "control"], "r", lazy.restart()),
 
     ([mod, "control"], "q", lazy.shutdown()),
-    ([mod], "r", lazy.spawncmd()),
+    # ([mod], "r", lazy.spawncmd()),
 
     # Screen lock
     ([mod, "control"], "l", lazy.spawn(lock_command)),
