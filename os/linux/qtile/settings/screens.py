@@ -7,8 +7,12 @@
 from libqtile.config import Screen
 from libqtile import bar
 from libqtile.log_utils import logger
-from .widgets import primary_widgets, secondary_widgets
 import subprocess
+
+try:
+    from .widgetsextra import primary_widgets, secondary_widgets
+except Exception as e:
+    from .widgets import primary_widgets, secondary_widgets
 
 
 # Function that create the status_bar. (widgets, size)
