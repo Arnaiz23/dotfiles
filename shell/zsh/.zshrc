@@ -67,6 +67,9 @@ alias dotfiles="cd ~/.dotfiles"
 alias lg="lazygit"
 alias lzd="lazydocker"
 
+# Change wallpaper script
+alias c_wallpaper="sh $DOTFILES/scripts/change_wallpaper.sh"
+
 # delete node_modules
 alias nmkill="npx npkill"
 
