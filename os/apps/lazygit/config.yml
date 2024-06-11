@@ -125,7 +125,7 @@ keybinding:
         jumpToBlock: ["1", "2", "3", "4", "5"] # goto the Nth block / panel
         nextMatch: "n"
         prevMatch: "N"
-        optionMenu: null # show help menu
+        optionMenu: <disabled> # show help menu
         optionMenu-alt1: "?" # show help menu
         select: "<space>"
         goInto: "<enter>"
@@ -231,81 +231,81 @@ keybinding:
         update: "u"
         bulkMenu: "b"
 customCommands:
-  - key: "C"
-    # command: "git cz c"
-    description: "commit with commitizen"
-    context: "files"
-    loadingText: "opening commitizen commit tool"
-    # subprocess: true
-    prompts:
-      - type: 'menu'
-        title: 'Type'
-        key: 'Type'
-        options:
-          - name: 'feat'
-            value: 'feat'
-          - name: 'fix'
-            value: 'fix'
-          - name: 'docs'
-            value: 'docs'
-          - name: 'style'
-            value: 'style'
-          - name: 'refactor'
-            value: 'refactor'
-          - name: 'test'
-            value: 'test'
-          - name: 'chore'
-            value: 'chore'
-          - name: 'revert'
-            value: 'revert'
-      # - type: 'input'
-      #   title: 'Scope'
-      #   key: 'Scope'
-      #   initialValue: ''
-      - type: 'menu'
-        title: 'Scope'
-        key: 'Scope'
-        options:
-          - name: '✨ New features'
-            value: '✨'
-          - name: '🐛 Fix a bug'
-            value: '🐛'
-          - name: '🚀 Deploy'
-            value: '🚀'
-          - name: '🔥 Remove code or files'
-            value: '🔥'
-          - name: '⚡ Improve performance'
-            value: '⚡'
-          - name: '📝 Add or update documentation'
-            value: '📝'
-          - name: '🎉 Begin a project'
-            value: '🎉'
-          - name: '✅ Add, update or pass tests'
-            value: '✅'
-          - name: '💄 Add or update the UI and styles'
-            value: '💄'
-          - name: '🚧 Work in progress'
-            value: '🚧'
-          - name: '⬇ Downgrade dependencies'
-            value: '⬇'
-          - name: '⬆ Upgrade dependencies'
-            value: '⬆'
-          - name: '♻ Refactor code'
-            value: '♻'
-          - name: '➕ Add a dependency'
-            value: '➕'
-          - name: '➖ Remove a dependency'
-            value: '➖'
-          - name: '🔀 Merge branches'
-            value: '🔀'
-          - name: '🙈 Add or update a .gitignore file'
-            value: '🙈'
-      - type: 'input'
-        title: 'Summary'
-        key: 'Summary'
-        initialValue: '{{.Form.Type}} {{.Form.Scope}}: '
-      - type: 'input'
-        title: 'Description'
-        key: 'Description'
-        initialValue: ' '
-    command: 'git commit -m "{{.Form.Summary}}" -m "{{.Form.Description}}"'
+    - key: "C"
+      # command: "git cz c"
+      description: "commit with commitizen"
+      context: "files"
+      loadingText: "opening commitizen commit tool"
+      # subprocess: true
+      prompts:
+        - type: 'menu'
+          title: 'Type'
+          key: 'Type'
+          options:
+            - name: 'feat'
+              value: 'feat'
+            - name: 'fix'
+              value: 'fix'
+            - name: 'docs'
+              value: 'docs'
+            - name: 'style'
+              value: 'style'
+            - name: 'refactor'
+              value: 'refactor'
+            - name: 'test'
+              value: 'test'
+            - name: 'chore'
+              value: 'chore'
+            - name: 'revert'
+              value: 'revert'
+        # - type: 'input'
+        #   title: 'Scope'
+        #   key: 'Scope'
+        #   initialValue: ''
+        - type: 'menu'
+          title: 'Scope'
+          key: 'Scope'
+          options:
+            - name: '✨ New features'
+              value: '✨'
+            - name: "\U0001F41B Fix a bug"
+              value: "\U0001F41B"
+            - name: "\U0001F680 Deploy"
+              value: "\U0001F680"
+            - name: "\U0001F525 Remove code or files"
+              value: "\U0001F525"
+            - name: '⚡ Improve performance'
+              value: '⚡'
+            - name: "\U0001F4DD Add or update documentation"
+              value: "\U0001F4DD"
+            - name: "\U0001F389 Begin a project"
+              value: "\U0001F389"
+            - name: '✅ Add, update or pass tests'
+              value: '✅'
+            - name: "\U0001F484 Add or update the UI and styles"
+              value: "\U0001F484"
+            - name: "\U0001F6A7 Work in progress"
+              value: "\U0001F6A7"
+            - name: '⬇ Downgrade dependencies'
+              value: '⬇'
+            - name: '⬆ Upgrade dependencies'
+              value: '⬆'
+            - name: '♻ Refactor code'
+              value: '♻'
+            - name: '➕ Add a dependency'
+              value: '➕'
+            - name: '➖ Remove a dependency'
+              value: '➖'
+            - name: "\U0001F500 Merge branches"
+              value: "\U0001F500"
+            - name: "\U0001F648 Add or update a .gitignore file"
+              value: "\U0001F648"
+        - type: 'input'
+          title: 'Summary'
+          key: 'Summary'
+          initialValue: '{{.Form.Type}} {{.Form.Scope}}: '
+        - type: 'input'
+          title: 'Description'
+          key: 'Description'
+          initialValue: ' '
+      command: 'git commit -m "{{.Form.Summary}}" -m "{{.Form.Description}}"'
