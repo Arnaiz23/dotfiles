@@ -150,3 +150,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # go
 export PATH=$HOME/go/bin:$PATH
+
+# zed
+export PATH=$HOME/.local/bin:$PATH
