@@ -86,3 +86,8 @@ Nmap("<leader>ctb", ":TSBufToggle highlight<CR>", "Toggle the buf highlight")
 
 -- Clear the search
 Nmap("<leader>nc", ":noh<CR>", "Clear the search highlights")
+
+-- Buffers
+Nmap("<leader>be", ":Telescope buffers<CR>", "Show the active buffers")
+Nmap("<leader>bn", ":bnext<CR>", "Open the next buffer")
+Nmap("<leader>bp", ":bprevious<CR>", "Open the previous buffer")
