@@ -7,7 +7,7 @@ try:
 except ModuleNotFoundError as e:
     print("qtile_extras module not found")
 
-red_device = 'enp37s0'
+red_device, red_device_item = list(psutil.net_if_addrs().items())[1]
 myTerm = "alacritty"
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
@@ -92,7 +92,7 @@ primary_widgets = [
         widgets=[
             widget.TextBox(text=" ", background=colors["dark"]),
             widget.TextBox(
-                text=f"󰩠: {psutil.net_if_addrs()[red_device][0][1]}",
+                text=f"󰩠: {red_device_item[0][1]}",
                 background=colors["dark"],
                 foreground=colors["color2"],
             ),
