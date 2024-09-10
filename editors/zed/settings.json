@@ -1,0 +1,13 @@
+{
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Tokyo Night Storm"
+  },
+  "font_family": "FiraCode Nerd Font",
+  "autosave": "on_focus_change",
+  "soft_wrap": "editor_width"
+}
