@@ -127,6 +127,15 @@ alias vf='v $(fp)'
 #echo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
 
+WM_VAR="/$TMUX"
+WM_CMD="tmux"
+
+function start_if_needed() {
+    if [[ $- == *i* ]] && [[ -z "${WM_VAR#/}" ]] && [[ -t 1 ]]; then
+        exec $WM_CMD
+    fi
+}
+
 # Activate zoxide
 eval "$(zoxide init zsh)"
 
@@ -157,3 +166,5 @@ export PATH=$HOME/.local/bin:$PATH
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+start_if_needed
