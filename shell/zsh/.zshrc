@@ -165,6 +165,8 @@ export PATH=$HOME/.local/bin:$PATH
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+if [[ -z $(which ng) ]]; then
+  source <(ng completion script)
+fi
 
 start_if_needed
