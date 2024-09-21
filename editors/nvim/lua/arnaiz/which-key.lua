@@ -4,34 +4,21 @@ if not status_ok then
 end
 
 local mappings = {
-	g = {
-		name = "Git",
-	},
-	s = {
-		name = "Split",
-	},
-	q = {
-		name = "Quit",
-	},
-	c = {
-		name = "Code",
-		t = {
-			name = "TreeSitter",
-		},
-	},
-	n = {
-		name = "Neovim",
-		q = "Quit terminal <C-\\><C-n>",
-	},
-	f = {
-		name = "Find",
-	},
-	l = {
-		name = "LSP",
-		d = "Open definition",
-	},
+  { "<leader>g", group = "Git" },
+  { "<leader>e", desc = "Open netrw", icon = "" },
+  { "<leader>o", desc = "Open vertical netrw", icon = "" },
+  { "<leader>b", group = "Buffers", icon = "" },
+  { "<leader>s", group = "Split", icon = "󰨑" },
+  { "<leader>q", group = "Quit" },
+  { "<leader>c", group = "Code" },
+  { "<leader>ct", group = "TreeSitter" },
+  { "<leader>n", group = "Neovim", icon = "" },
+  { "<leader>nq", desc = "Quit terminal <C-\\><C-n>" },
+  { "<leader>f", group = "Find" },
+  { "<leader>l", group = "LSP", icon = "󰰍" },
+  { "<leader>ld", desc = "Open definition" },
 }
 
 local opts = { prefix = "<leader>" }
 
-wk.register(mappings, opts)
+wk.add(mappings, opts)

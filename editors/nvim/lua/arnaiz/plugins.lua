@@ -108,6 +108,8 @@ local plugins = {
   -- Which key
   "folke/which-key.nvim",
 
+  -- Which key icons
+  'echasnovski/mini.icons',
   -- LSP UI
   "glepnir/lspsaga.nvim",
 
