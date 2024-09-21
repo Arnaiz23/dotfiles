@@ -7,7 +7,7 @@ local servers = {
 	"jsonls",
 	"eslint",
 	"cssmodules_ls",
-	"tsserver",
+  "ts_ls",
 	"lua_ls",
 	"html",
 	"dockerls",
