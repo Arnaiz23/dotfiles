@@ -198,14 +198,14 @@ if.app-id = 'org.alacritty'
 run = 'move-node-to-workspace 3'
 
 # WORKSPACE 4
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace 4'
 
 # WORKSPACE 5
 # [[on-window-detected]]
 # if.app-id = 'com.apple.finder'
 # run = 'move-node-to-workspace 5'
-[[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace 5'
 
 # WORKSPACE T
 [[on-window-detected]]
