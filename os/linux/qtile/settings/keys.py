@@ -60,7 +60,7 @@ keys = [
         ([mod, "control"], "l", lazy.spawn(lock_command)),
         # ------------ App Configs ------------
         # Menu
-        ([mod, "shift"], "Return", lazy.spawn(menu)),
+        ([mod], "Space", lazy.spawn(menu)),
         # DMenu
         ([mod], "m", lazy.spawn("dmenu_run")),
         # Window Nav
