@@ -57,6 +57,9 @@ def workspaces():
             urgent_alert_method='text',
             urgent_text=colors['color1'],
             this_current_screen_border=colors['active'],
+            this_screen_border=colors["inactive"],
+            other_current_screen_border=colors["active"],
+            other_screen_border=colors["inactive"],
             disable_drag=True,
             center_aligned=True
         ),
