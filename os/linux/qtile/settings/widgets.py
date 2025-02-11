@@ -2,11 +2,6 @@ import psutil
 from libqtile import widget, qtile
 from .theme import colors
 
-try:
-    from qtile_extras.widget.decorations import BorderDecoration
-except ModuleNotFoundError as e:
-    print("qtile_extras module not found")
-
 red_device, red_device_item = list(psutil.net_if_addrs().items())[1]
 myTerm = "alacritty"
 
@@ -51,25 +46,23 @@ def workspaces():
             font='UbuntuMono Nerd Font',
             fontsize=19,
             margin_y=3,
-            margin_x=0,
-            padding_y=8,
-            padding_x=5,
-            borderwidth=1,
+            margin_x=5,
+            padding_y=2,
+            padding_x=8,
+            borderwidth=2,
             active=colors['active'],
             inactive=colors['inactive'],
-            rounded=False,
-            highlight_method='block',
-            urgent_alert_method='block',
-            urgent_border=colors['urgent'],
-            this_current_screen_border=colors['focus'],
-            this_screen_border=colors['grey'],
-            other_current_screen_border=colors['dark'],
-            other_screen_border=colors['dark'],
-            disable_drag=True
+            rounded=True,
+            highlight_method='line',
+            urgent_alert_method='text',
+            urgent_text=colors['color1'],
+            this_current_screen_border=colors['active'],
+            disable_drag=True,
+            center_aligned=True
         ),
         separator(),
         # Name of the window in the right of the icons
-        widget.WindowName(**base(fg='focus'), fontsize=14, padding=5),
+        widget.WindowName(**base(fg='active'), fontsize=14, padding=5),
         separator(),
     ]
 
@@ -79,127 +72,48 @@ primary_widgets = [
 
     separator(),
 
-    # System icons
-    widget.Systray(background=colors['dark'], padding=5),
+    # Right side
 
-    widget.TextBox(text=" ", background=colors["dark"]),
-
-    widget.WidgetBox(
-        start_opened=True,
-        text_open="󱃥 ",
-        text_closed="󱃦 ",
-        background=colors["dark"],
-        widgets=[
-            widget.TextBox(text=" ", background=colors["dark"]),
-            widget.TextBox(
-                text=f"󰩠: {red_device_item[0][1]}",
-                background=colors["dark"],
-                foreground=colors["color2"],
-            ),
-            widget.TextBox(text=" ", background=colors["dark"]),
-            widget.CapsNumLockIndicator(
-                **base(fg="color7"),
-            ),
-        ],
-    ),
-    widget.TextBox(text=" ", background=colors["dark"]),
-
-    # Updates
-    # powerline('color3', 'dark'),
-
-    icon(bg="dark", fg="color6", text=' '), # Icon: nf-fa-download
-    
+    ## Updates
+    icon(bg="dark", fg="light", text=' '), # Icon: nf-fa-download
     widget.CheckUpdates(
         background=colors['dark'],
-        colour_have_updates=colors['color6'],
-        colour_no_updates=colors['color6'],
+        colour_have_updates=colors['light'],
+        colour_no_updates=colors['light'],
         no_update_string='0',
         display_format='{updates}',
         update_interval=1800,
         custom_command='checkupdates',
         mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
     ),
+    separator(),
+    separator(),
 
-    widget.TextBox(text=" ", background=colors["dark"]),
+    ## RAM
+    icon(fg="light", text=' '),  # Icon: nf-fa-save
+    widget.Memory(**base(fg='light') ),
+    separator(),
+    separator(),
 
-    # Network
-    icon(bg="dark", fg='color6', text='󰓅 '),  # Icon: nf-md-speedometer
-    
-    widget.Net(**base(bg='dark', fg='color6'), format = '{down} {up}', interface = red_device, use_bits = 'true'),
+    ## CPU
+    widget.CPU(**base(fg="light"),format='󰍛 CPU {load_percent}%'), # Icon: nf-md-memory
+    separator(),
+    separator(),
 
-    widget.TextBox(text=" ", background=colors["dark"]),
+    ## Calendar and clock
+    icon(fg="light", fontsize=16, text=' '), # Icon: nf-mdi-calendar_clock
+    widget.Clock(**base(fg='light'), format='%d/%m/%Y - %H:%M '),
 
-    # RAM
-    # powerline('color1', 'color3'),
-
-    icon(fg="color1", text=' '),  # Icon: nf-fa-save
-    
-    widget.Memory(**base(fg='color1') ),
-
-    # CPU
-    widget.TextBox(foreground=colors["color1"], background=colors['dark'], text=" "),
-
-    widget.CPU(**base(fg="color1"),format='󰍛 CPU {load_percent}%'), # Icon: nf-md-memory
-
-    widget.TextBox(text=" ", background=colors["dark"]),
-
-    # Layout
-    # powerline('color3', 'color1'),
-
-    widget.CurrentLayoutIcon(**base(fg='color3'), scale=0.65),
-
-    widget.CurrentLayout(**base(fg='color3'), padding=5),
-
-    widget.TextBox(text=" ", background=colors["dark"]),
-
-    # Calendar and clock
-    # powerline('color1', 'color3'),
-
-    icon(fg="color5", fontsize=17, text=' '), # Icon: nf-mdi-calendar_clock
-
-    widget.Clock(**base(fg='color5'), format='%d/%m/%Y - %H:%M '),
-
-    # System icons
-    # powerline('text', 'color1'),
-    widget.TextBox(text=" ", background=colors["dark"]),
-
+    # Power options
     widget.TextBox(
         background=colors["dark"],
-        foreground=colors["color6"],
+        foreground=colors["light"],
         fontsize=16,
         text="⏻ ",
         padding=3,
         mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("power_rofi")},
     ),
-    widget.TextBox(text=" ", background=colors["dark"]),
-]
-
-secondary_widgets = [
-    *workspaces(),
-
-    separator(),
-
-    icon(fg="color4", text=' '),  # Icon: nf-fa-feed
-
-    widget.KeyboardLayout(
-        foreground = colors["color4"],
-        background = colors["dark"],
-        fmt = 'Keyboard: {}',
-        configured_keyboards = ['es', 'us']
-   ),
-
-
-    widget.TextBox(text=" ", background=colors[ "dark"]),
-
-    icon(fg="color3", fontsize=17, text=' 󰖐 '), # Icon: nf-mdi-calendar_clock
-
-    widget.OpenWeather(**base(fg='color3'), location="Madrid"),
-
-    widget.TextBox(text=" ", background=colors["dark"]),
-
-    widget.CapsNumLockIndicator(**base(fg="color6")),
-
-    widget.TextBox(text=" ", background=colors["dark"]),
+    separator()
 ]
 
 widget_defaults = {

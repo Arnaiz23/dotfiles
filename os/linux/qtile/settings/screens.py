@@ -9,15 +9,17 @@ from libqtile import bar
 from libqtile.log_utils import logger
 import subprocess
 
-try:
-    from .widgetsextra import primary_widgets, secondary_widgets
-except Exception as e:
-    from .widgets import primary_widgets, secondary_widgets
+# Old widgets
+# try:
+#     from .widgetsextra import primary_widgets, secondary_widgets
+# except Exception as e:
+#     from .widgets import primary_widgets, secondary_widgets
 
+from .widgets import primary_widgets
 
 # Function that create the status_bar. (widgets, size)
 def status_bar(widgets):
-    return bar.Bar(widgets, 24, opacity=0.92)
+    return bar.Bar(widgets, size=40, opacity=0.92)
 
 
 # top -> position of the status_bar (top, bottom)
@@ -41,4 +43,4 @@ else:
 
 if connected_monitors > 1:
     for _ in range(1, connected_monitors):
-        screens.append(Screen(top=status_bar(secondary_widgets)))
+        screens.append(Screen(top=status_bar(primary_widgets)))
