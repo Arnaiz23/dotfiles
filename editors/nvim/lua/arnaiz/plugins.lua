@@ -137,6 +137,9 @@ local plugins = {
     "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+
+  -- Dashboard
+  "goolord/alpha-nvim"
 }
 
 local opts = {}
