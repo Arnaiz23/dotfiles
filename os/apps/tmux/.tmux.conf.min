@@ -52,3 +52,58 @@ detach-client
 } {
 display-popup -E "tmux new-session -A -s scratch"
 }
+
+# Show the current branch in tmux
+set -g status-right "#(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD)"
+
+# List the sessions
+bind C-e display-popup -E "\
+tmux list-sessions -F '#{?session_attached,,#{session_name}}' |\
+sed '/^$/d' |\
+fzf --reverse --header jump-to-session |\
+xargs tmux switch-client -t"
+
+# List the windows
+bind C-f display-popup -E "\
+tmux list-windows -F '#{window_index} #{window_name}' |\
+sed '/^$/d' |\
+fzf --reverse --header jump-to-window |\
+cut -d ' ' -f 1 |\
+xargs tmux select-window -t"
+
+# Toggle the status bar
+bind-key -T prefix t set-option -g status
+
+# Change the path for newly created window
+bind c new-window -c "#{pane_current_path}"
+
+# Move tmux status bar to top
+bind-key C-k run-shell "tmux set-option -g status-position top;"
+
+# Move tmux status bar to bottom
+bind-key C-j run-shell "tmux set-option -g status-position bottom;"
+
+# open lazygit in a new window with prefix+g
+bind-key g new-window -n lazygit -c "#{pane_current_path}" "lazygit"
+
+# open an application in a new window with prefix+o, and allow me to provide the app name
+bind-key o command-prompt -p "open app: " "new-window '%%'"
+
+# show a promp to kill a window by id with prefix+X
+bind-key X command-prompt -p "kill window: " "kill-window -t '%%'"
+
+# use prefix+| (or prefix+\) to split window horizontally and prefix+- or
+# (prefix+_) to split vertically also use the current pane path to define the
+# new pane path
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+
+set -g @plugin 'tmux-plugins/tpm'
+# Restore the tmux sessions
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+set -g @continuum-restore 'on'
+
+run-shell ~/.tmux/plugins/tmux-resurrect/resurrect.tmux
+run '~/.tmux/plugins/tpm/tpm'

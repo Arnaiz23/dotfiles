@@ -73,11 +73,9 @@ Create a symbolic link in ~/ from $DOTFILES_PATH/os/apps/tmux/.tmux.conf
 
 ## QTILE
 
-For I can use the qtile extrax, I need to install this command:
+Currently, I'm using a minimalist configuration of qtile.
 
-```bash
-	yay -S qtile-extras-git
-```
+![qtile minimalist](./docs/qtile-min.png)
 
 ## Scripts
 

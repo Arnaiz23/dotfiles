@@ -17,5 +17,8 @@ picom &
 # bluetooth icon
 blueman-applet &
 
+# Polybar
+~/.config/polybar/launch.sh $
+
 dbus-update-activation-environment --all
 gnome-keyring-daemon --start --components=secrets
