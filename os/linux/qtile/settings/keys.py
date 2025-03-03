@@ -103,5 +103,10 @@ keys = [
         # Brightness
         ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
         ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+        # Music / playerctl
+        ([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
+        ([], "XF86AudioPrev", lazy.spawn("playerctl previous")),
+        ([], "XF86AudioNext", lazy.spawn("playerctl next")),
+        ([], "XF86AudioStop", lazy.spawn("playerctl stop")),
     ]
 ]
