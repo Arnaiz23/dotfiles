@@ -73,7 +73,7 @@ outer.right =      10
 3 = 'main'
 5 = 'main'
 B = 'secondary'
-M = 'secondary'
+M = 'built-in'
 T = 'built-in'
 
 # 'main' binding mode declaration
@@ -194,7 +194,7 @@ run = 'move-node-to-workspace 2'
 if.app-id = 'com.googlecode.iterm2'
 run = 'move-node-to-workspace 3'
 [[on-window-detected]]
-if.app-id = 'org.alacritty'
+if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace 3'
 
 # WORKSPACE 4
@@ -222,10 +222,10 @@ run = 'move-node-to-workspace G'
 
 # WORKSPACE B
 
-# WORKSPACE V
+# WORKSPACE M
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace V'
+run = 'move-node-to-workspace M'
 
 # WORKSPACE X
 # [[on-window-detected]]
