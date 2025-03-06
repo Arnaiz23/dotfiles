@@ -86,6 +86,12 @@ bind-key C-j run-shell "tmux set-option -g status-position bottom;"
 # open lazygit in a new window with prefix+g
 bind-key g new-window -n lazygit -c "#{pane_current_path}" "lazygit"
 
+# open serpl in a new window with prefix+H
+bind-key H new-window -n serpl -c "#{pane_current_path}" "serpl"
+
+# open ranger in a new window with prefix+R
+bind-key R new-window -n ranger -c "#{pane_current_path}" "ranger"
+
 # open an application in a new window with prefix+o, and allow me to provide the app name
 bind-key o command-prompt -p "open app: " "new-window '%%'"
 
