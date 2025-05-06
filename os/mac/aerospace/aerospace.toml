@@ -175,6 +175,9 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+ctrl-m = '''exec-and-forget osascript -e 'set volume input volume 0' '''
+ctrl-n = '''exec-and-forget osascript -e 'set volume input volume 33' '''
+
 [mode.apps.binding]
 f = ['fullscreen', 'mode main']
 t = ['exec-and-forget open -n /System/Volumes/Data/Applications/WezTerm.app', 'mode main']
