@@ -14,4 +14,4 @@ case "$SENDER" in
     ;;
 esac
 
-sketchybar --set "$NAME" label="${LABEL}"
+sketchybar --set "$NAME" icon="" label="${LABEL}"
