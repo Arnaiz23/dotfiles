@@ -13,9 +13,9 @@ null_ls.setup({
 	sources = {
 		formatting.prettier.with({ extra_args = { "--no-semi" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
-    formatting.eslint,
+    -- formatting.eslint,
 		formatting.stylua,
-		formatting.beautysh,
+		-- formatting.beautysh,
 		-- diagnostics.flake8
 	},
 })

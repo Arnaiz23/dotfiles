@@ -72,7 +72,11 @@ local plugins = {
   "williamboman/mason-lspconfig.nvim",
 
   -- NullLS
-  "jose-elias-alvarez/null-ls.nvim",
+  -- "jose-elias-alvarez/null-ls.nvim",
+  -- "nvimtools/none-ls.nvim",
+
+  -- Conform (prettier, eslint...)
+  "stevearc/conform.nvim",
 
   -- Telescope
   "nvim-telescope/telescope.nvim",
