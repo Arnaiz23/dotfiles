@@ -35,11 +35,6 @@ zgen oh-my-zsh plugins/sudo
 export PAGER="less"
 export EDITOR="nvim"
 
-# node
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -124,18 +119,14 @@ alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}
 # search for a file with fzf and open it in vim
 alias vf='v $(fp)'
 
-#echo "$(cat $HOME/.dotfiles/banner)" | lolcat
+# read tmux commands
+alias tmuxk='glow $DOTFILES/os/apps/tmux/tmux_commands.md'
+
+# ipm (inkdrop)
+alias ipm='./Applications/inkdrop-app/resources/app/ipm/bin/ipm'
+
+#easo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
-
-WM_VAR="/$TMUX"
-WM_CMD="tmux"
-
-function start_if_needed() {
-    if [[ $- == *i* ]] && [[ -z "${WM_VAR#/}" ]] && [[ -t 1 ]]; then
-        exec $WM_CMD
-    fi
-}
-
 # Activate zoxide
 eval "$(zoxide init zsh)"
 
@@ -169,4 +160,54 @@ if [[ -z $(which ng) ]]; then
   source <(ng completion script)
 fi
 
-start_if_needed
+fpath=(~ $fpath)
+autoload -Uz .zshrc_functions
+
+i() {
+  if ! [[ -f "package.json" ]]; then
+    echo "The package.json doesn't exists"
+    return
+  fi
+
+  if [[ -f "pnpm-lock.yaml" ]]; then
+    echo "⏵ Detectando pnpm-lock.yaml, usando pnpm..."
+    pnpm install
+  elif [[ -f "bun.lockb" ]]; then
+    echo "⏵ Detectando bun.lockb, usando bun..."
+    bun install
+  elif [[ -f "package-lock.json" ]]; then
+    echo "⏵ Detectando package-lock.json, usando npm..."
+    npm install
+  elif [[ -f "yarn.lock" ]]; then
+    echo "⏵ Detectando yarn.lock, usando yarn..."
+    yarn install
+  else
+    echo "No se detecto ningún archivo de bloqueo, usando por defecto..."
+    pnpm install
+  fi
+}
+
+show_functions() {
+  local options=('i' 'newdir')
+
+  echo "Custom functions:"
+
+  for opt in "${options[@]}"; do
+    echo " - $opt"
+  done
+}
+
+newdir() {
+  mkdir $1 && cd $1
+}
+
+# Turso
+export PATH="$PATH:/home/arnaiz/.turso"
+
+# pnpm
+export PNPM_HOME="/home/arnaiz/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

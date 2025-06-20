@@ -17,6 +17,7 @@ This is the configuration of the Linux terminal.
 - Containers: Docker
 - Customize appareance: lxappearance
 - System icons: network-manager-applet
+- Audio / Music control: playerctl
 
 ## Installation
 
