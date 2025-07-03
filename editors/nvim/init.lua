@@ -1,5 +1,5 @@
 require("arnaiz.base")
-require("arnaiz.plugins")
+require("arnaiz.lazy")
 require("arnaiz.theme")
 require("arnaiz.keybindings")
 
