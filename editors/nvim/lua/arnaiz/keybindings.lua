@@ -91,3 +91,6 @@ Nmap("<leader>nc", ":noh<CR>", "Clear the search highlights")
 Nmap("<leader>be", ":Telescope buffers<CR>", "Show the active buffers")
 Nmap("<leader>bn", ":bnext<CR>", "Open the next buffer")
 Nmap("<leader>bp", ":bprevious<CR>", "Open the previous buffer")
+
+-- Marks
+Nmap("<leader>ml", ":Telescope marks<CR>", "List the saved marks")
