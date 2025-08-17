@@ -125,6 +125,9 @@ alias tmuxk='glow $DOTFILES/os/apps/tmux/tmux_commands.md'
 # ipm (inkdrop)
 alias ipm='./Applications/inkdrop-app/resources/app/ipm/bin/ipm'
 
+# zed (editor)
+alias zed='zeditor'
+
 #easo "$(cat $HOME/.dotfiles/banner)" | lolcat
 #echo "ArchFade" | lolcat
 # Activate zoxide

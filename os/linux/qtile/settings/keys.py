@@ -26,6 +26,7 @@ emoji_launcher = "emoji-picker"
 # emoji_launcher = "rofi -show emoji -modi emoji"
 power_launcher = "power_rofi"
 close_dunst_notifications = "dunstctl close-all"
+clipboard_manager = "copyq toggle"
 
 keys = [
     Key(key[0], key[1], *key[2:])
@@ -87,6 +88,8 @@ keys = [
         ([mod], "p", lazy.spawn(music)),
         # Notifications
         ([mod], "q", lazy.spawn(close_dunst_notifications)),
+        # Clipboard Manager
+        ([mod], "v", lazy.spawn(clipboard_manager)),
         # ------------ Hardware Configs ------------
         # Volume
         (
