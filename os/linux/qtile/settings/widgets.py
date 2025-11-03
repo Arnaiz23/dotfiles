@@ -104,7 +104,7 @@ primary_widgets = [
     separator(),
 
     ## Calendar and clock
-    icon(fg="light", fontsize=16, text=' '), # Icon: nf-mdi-calendar_clock
+    icon(fg="light", fontsize=16, text='󰃭 '), # Icon: nf-md-calendar
     widget.Clock(**base(fg='light'), format='%d/%m/%Y - %H:%M '),
 
     # Power options
