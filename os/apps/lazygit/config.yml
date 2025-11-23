@@ -269,11 +269,11 @@ customCommands:
         options:
           - name: '✨ New features'
             value: '✨'
-          - name: "\U0001F41B Fix a bug"
-            value: "\U0001F41B"
-          - name: "\U0001F680 Deploy"
-            value: "\U0001F680"
-          - name: "\U0001F525 Remove code or files"
+          - name: " Fix a bug"
+            value: ""
+          - name: "󱓞 Deploy"
+            value: "󱓞"
+          - name: "󰆴 Remove code or files"
             value: "\U0001F525"
           - name: '⚡ Improve performance'
             value: '⚡'
