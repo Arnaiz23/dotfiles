@@ -1,4 +1,4 @@
-images_url=$HOME/Imágenes/wallpaper-4k
+images_url=$HOME/Pictures/wallpaper-4k
 image_name=$(
     ls $images_url | fzf --preview="catimg -w 200 $images_url/{}"
 )

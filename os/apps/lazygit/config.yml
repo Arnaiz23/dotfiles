@@ -48,9 +48,9 @@ gui:
   skipRewordInEditorWarning: false # for skipping the confirmation before launching the reword editor
   border: "single" # one of 'single' | 'double' | 'rounded' | 'hidden'
 git:
-  paging:
-    colorArg: always
-    useConfig: false
+  pagers:
+    - colorArg: always
+      useConfig: false
   commit:
     signOff: false
     verbose: default # one of 'default' | 'always' | 'never'
@@ -179,7 +179,7 @@ keybinding:
     viewResetOptions: "D"
     fetch: "f"
     toggleTreeView: "`"
-    openMergeTool: "M"
+    openMergeOptions: "M"
     openStatusFilter: "<c-b>"
   branches:
     createPullRequest: "o"
@@ -269,11 +269,11 @@ customCommands:
         options:
           - name: '✨ New features'
             value: '✨'
-          - name: "\U0001F41B Fix a bug"
-            value: "\U0001F41B"
-          - name: "\U0001F680 Deploy"
-            value: "\U0001F680"
-          - name: "\U0001F525 Remove code or files"
+          - name: " Fix a bug"
+            value: ""
+          - name: "󱓞 Deploy"
+            value: "󱓞"
+          - name: "󰆴 Remove code or files"
             value: "\U0001F525"
           - name: '⚡ Improve performance'
             value: '⚡'
