@@ -17,6 +17,7 @@ browser = "firefox"
 secondary_browser = "brave"
 explorer = "thunar"
 notes = "inkdrop"
+notes_beta = "inkdrop-beta"
 music = "spotify-launcher"
 # lock_command = "dm-tool lock"
 lock_command = "slock"
@@ -83,6 +84,7 @@ keys = [
         ([mod], "g", lazy.spawn(emoji_launcher)),
         # inkdrop
         ([mod], "i", lazy.spawn(notes)),
+        ([mod, "shift"], "i", lazy.spawn(notes_beta)),
         # power launcher
         ([mod, "shift"], "q", lazy.spawn(power_launcher)),
         ([mod], "p", lazy.spawn(music)),

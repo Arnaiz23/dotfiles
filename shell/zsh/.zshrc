@@ -15,12 +15,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # z
 plugins=(
-  git common-aliases colored-man-pages ssh-agent
+  git common-aliases colored-man-pages
 )
-
-zstyle :omz:plugins:ssh-agent helper ksshaskpass
-zstyle :omz:plugins:ssh-agent quiet yes
-zstyle :omz:plugins:ssh-agent identities homeserver id_ed25519
 
 # Reload theme
 source $ZSH/oh-my-zsh.sh
@@ -40,8 +36,8 @@ export EDITOR="nvim"
 
 # Aliases
 
-alias treel="exa --icons --tree -L 1 -I node_modules"
-alias tree="tree -I node_modules"
+alias treel="exa --icons --tree -L 1 --git-ignore"
+alias tree="exa --icons --tree --git-ignore"
 alias ls="exa --icons"
 alias la="exa -l -a --icons"
 alias grep="grep --color"
@@ -215,3 +211,13 @@ case ":$PATH:" in
 esac
 # pnpm end
 #source /home/adrian/.dotfiles/.zshrc
+
+# opencode
+export PATH=/home/adrian/.opencode/bin:$PATH
+
+# Bitwarden SSH Agent
+export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
+
+# Evitar askpass gráfico
+unset SSH_ASKPASS
+export SSH_ASKPASS_REQUIRE=never
