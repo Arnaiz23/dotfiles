@@ -5,6 +5,18 @@ from .theme import colors
 red_device, red_device_item = list(psutil.net_if_addrs().items())[1]
 myTerm = "alacritty"
 
+def get_battery():
+    batt = psutil.sensors_battery()
+
+    if batt is not None:
+        return widget.WidgetBox(widgets=[
+            icon(fg="light", text="󰁹"),
+            widget.Battery(**base(fg='light'), charging_foreground=colors['color3'], low_foreground=colors['urgent'], format='{percent:2.0%}')
+        ], start_opened=True, text_open="", text_closed="") 
+    else:
+        return icon(text="")
+
+
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
 def base(fg='text', bg='dark'): 
@@ -106,6 +118,9 @@ primary_widgets = [
     ## Calendar and clock
     icon(fg="light", fontsize=16, text='󰃭 '), # Icon: nf-md-calendar
     widget.Clock(**base(fg='light'), format='%d/%m/%Y - %H:%M '),
+
+    get_battery(),
+    separator(),
 
     # Power options
     widget.TextBox(
