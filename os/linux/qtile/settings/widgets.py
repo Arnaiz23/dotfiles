@@ -31,12 +31,13 @@ def separator():
 
 
 # Uploads and wifi icons corner right
-def icon(fg='text', bg='dark', fontsize=22, text="?"):
+def icon(fg='text', bg='dark', fontsize=16, text="?"):
     return widget.TextBox(
         **base(fg, bg),
         fontsize=fontsize,
         text=text,
-        padding=3
+        padding=3,
+        font="FiraCode Nerd"
     )
 
 
@@ -55,8 +56,8 @@ def workspaces():
         separator(),
         widget.GroupBox(
             **base(fg='light'),
-            font='UbuntuMono Nerd Font',
-            fontsize=22,
+            font="FiraCode Nerd",
+            fontsize=16,
             margin_y=3,
             margin_x=5,
             padding_y=2,
@@ -77,7 +78,7 @@ def workspaces():
         ),
         separator(),
         # Name of the window in the right of the icons
-        widget.WindowName(**base(fg='active'), fontsize=14, padding=5),
+        widget.WindowName(**base(fg='active'), fontsize=14, padding=5, font="FiraCode Nerd"),
         separator(),
     ]
 
@@ -90,7 +91,7 @@ primary_widgets = [
     # Right side
 
     ## Updates
-    icon(bg="dark", fg="light", text=''), # Icon: nf-fa-download
+    icon(bg="dark", fg="light", text=' '), # Icon: nf-fa-download
     widget.CheckUpdates(
         background=colors['dark'],
         colour_have_updates=colors['light'],
@@ -99,7 +100,7 @@ primary_widgets = [
         display_format='{updates}',
         update_interval=1800,
         custom_command='checkupdates',
-        mouse_callbacks = {'Button1': lambda: qtile.spawn(myTerm + ' -e sudo pacman -Syu')},
+        mouse_callbacks = {'Button1': lambda: qtile.spawn(myTerm + ' -e sudo pacman -Syu')}
     ),
     separator(),
     separator(),
@@ -111,13 +112,13 @@ primary_widgets = [
     separator(),
 
     ## CPU
-    icon(fg="light", text='󰍛'),
+    icon(fg="light", text='󰍛 '),
     widget.CPU(**base(fg="light"),format='CPU {load_percent}%'), # Icon: nf-md-memory
     separator(),
     separator(),
 
     ## Calendar and clock
-    icon(fg="light", text='󰃭'), # Icon: nf-md-calendar
+    icon(fg="light", text='󰃭 '), # Icon: nf-md-calendar
     widget.Clock(**base(fg='light'), format='%d/%m/%Y - %H:%M '),
 
     get_battery(),

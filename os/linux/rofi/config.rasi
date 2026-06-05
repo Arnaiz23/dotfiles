@@ -3,4 +3,6 @@
 //@theme "/home/arnaiz/.local/share/rofi/themes/rounded-purple-dark.rasi"
 //@theme "/home/arnaiz/.local/share/rofi/themes/nord.rasi"
 
-@theme "/home/adrian/.config/rofi/themes/nord.rasi"
+//@theme "/home/adrian/.config/rofi/themes/nord.rasi"
+
+@theme "/home/adrian/.local/share/rofi/themes/squared-everforest.rasi"
