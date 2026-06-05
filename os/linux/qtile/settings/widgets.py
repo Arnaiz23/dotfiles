@@ -31,7 +31,7 @@ def separator():
 
 
 # Uploads and wifi icons corner right
-def icon(fg='text', bg='dark', fontsize=16, text="?"):
+def icon(fg='text', bg='dark', fontsize=22, text="?"):
     return widget.TextBox(
         **base(fg, bg),
         fontsize=fontsize,
@@ -56,7 +56,7 @@ def workspaces():
         widget.GroupBox(
             **base(fg='light'),
             font='UbuntuMono Nerd Font',
-            fontsize=19,
+            fontsize=22,
             margin_y=3,
             margin_x=5,
             padding_y=2,
@@ -90,7 +90,7 @@ primary_widgets = [
     # Right side
 
     ## Updates
-    icon(bg="dark", fg="light", text=' '), # Icon: nf-fa-download
+    icon(bg="dark", fg="light", text=''), # Icon: nf-fa-download
     widget.CheckUpdates(
         background=colors['dark'],
         colour_have_updates=colors['light'],
@@ -99,24 +99,25 @@ primary_widgets = [
         display_format='{updates}',
         update_interval=1800,
         custom_command='checkupdates',
-        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e sudo pacman -Syu')},
+        mouse_callbacks = {'Button1': lambda: qtile.spawn(myTerm + ' -e sudo pacman -Syu')},
     ),
     separator(),
     separator(),
 
     ## RAM
-    icon(fg="light", text=' '),  # Icon: nf-fa-save
-    widget.Memory(**base(fg='light') ),
+    icon(fg="light", text=''),  # Icon: nf-fa-save
+    widget.Memory(**base(fg='light')),
     separator(),
     separator(),
 
     ## CPU
-    widget.CPU(**base(fg="light"),format='󰍛 CPU {load_percent}%'), # Icon: nf-md-memory
+    icon(fg="light", text='󰍛'),
+    widget.CPU(**base(fg="light"),format='CPU {load_percent}%'), # Icon: nf-md-memory
     separator(),
     separator(),
 
     ## Calendar and clock
-    icon(fg="light", fontsize=16, text='󰃭 '), # Icon: nf-md-calendar
+    icon(fg="light", text='󰃭'), # Icon: nf-md-calendar
     widget.Clock(**base(fg='light'), format='%d/%m/%Y - %H:%M '),
 
     get_battery(),
@@ -126,10 +127,10 @@ primary_widgets = [
     widget.TextBox(
         background=colors["dark"],
         foreground=colors["light"],
-        fontsize=16,
+        fontsize=24,
         text="⏻ ",
         padding=3,
-        mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("power_rofi")},
+        mouse_callbacks={"Button1": lambda: qtile.spawn("power_rofi")},
     ),
     separator()
 ]
