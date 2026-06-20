@@ -14,7 +14,7 @@ mod = "mod4"
 
 terminal = "alacritty"
 browser = "firefox"
-secondary_browser = "brave"
+secondary_browser = "zen-browser"
 explorer = "thunar"
 notes = "inkdrop"
 notes_beta = "inkdrop-beta"

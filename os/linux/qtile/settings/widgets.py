@@ -78,7 +78,7 @@ def workspaces():
         ),
         separator(),
         # Name of the window in the right of the icons
-        widget.WindowName(**base(fg='active'), fontsize=14, padding=5, font="FiraCode Nerd"),
+        widget.WindowName(**base(fg='active'), fontsize=14, padding=5, font="Adwaita Sans"),
         separator(),
     ]
 

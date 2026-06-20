@@ -221,3 +221,5 @@ export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 # Evitar askpass gráfico
 unset SSH_ASKPASS
 export SSH_ASKPASS_REQUIRE=never
+
+bash "$DOTFILES/scripts/tmux.sh"
