@@ -1,0 +1,12 @@
+{
+    "custom/updates": {
+        "format": " {}",
+        "escape": false,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/getupdates.sh",
+        "restart-interval": 3600,
+        "on-click": "alacritty --title Updates -e sh -c ~/.config/waybar/scripts/installupdates.sh",
+        "on-click-right": "alacritty --title 'Installed Packages' -e sh -c ~/.config/waybar/scripts/listpackages.sh",
+        "tooltip": false
+    }
+}

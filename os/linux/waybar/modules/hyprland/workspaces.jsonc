@@ -1,0 +1,34 @@
+{
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "active-only": false,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{name}{icon}{windows}",
+        "format-icons": {
+            "urgent": "  ",
+            "default": " ",
+            "empty": ""
+        },
+        "window-rewrite": { // TODO complete
+            "title<.*youtube.*>": " ", 
+            "(.*) - Chromium": " ",
+            "Firefox": " ",
+            "(.*)VSCodium": "󰨞 ",
+            "Bitwarden": "󰣫 ",
+            "class<Codium>": "󰨞 ",
+            "(.*) - Thunar": " ",
+            "class<discord>": " ",
+            "Steam": " ",
+            "class<org.telegram.desktop>": " ",
+            "WhatsDesk": " ",
+            "Alacritty": " ",
+            "class<spotify>": " "
+	    },
+        "persistent-workspaces": {
+            "*": 10,
+            "HDMI-A-1": [11, 12],
+            "DP-1": [11,12]
+        }
+    }
+}
