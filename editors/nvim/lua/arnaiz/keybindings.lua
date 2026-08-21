@@ -94,3 +94,6 @@ Nmap("<leader>bp", ":bprevious<CR>", "Open the previous buffer")
 
 -- Marks
 Nmap("<leader>ml", ":Telescope marks<CR>", "List the saved marks")
+
+-- Quickfix
+Nmap("<leader>qc", ":cclose<CR>", "Close quickfix")
