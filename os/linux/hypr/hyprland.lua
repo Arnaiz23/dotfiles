@@ -44,6 +44,8 @@ local screenshot = "flameshot gui"
 local lock = "hyprlock"
 local notes = "inkdrop"
 local secondary_browser = 'zen-browser'
+local clipboard = 'copyq toggle'
+local cheatsheets = 'cheatsheets'
 
 
 -------------------
@@ -278,8 +280,10 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(secondary_browser))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(music))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(screenshot))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("bash ~/.dotfiles/cheatsheets/cheatsheets.sh"))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(lock))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(notes))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -375,6 +379,16 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
+})
+
+hl.window_rule({
+  name = 'keybinds-cheatsheets',
+  match = { class = '^keybinds-cheatsheet$' },
+
+  float = true,
+  size = { 800, 600 },
+
+  move = { "(monitor_w - window_w) / 2", "(monitor_h - window_h) / 2" }
 })
 
 -- ========================================== 
