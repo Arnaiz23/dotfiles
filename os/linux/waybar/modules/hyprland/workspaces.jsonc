@@ -23,7 +23,8 @@
             "class<org.telegram.desktop>": " ",
             "WhatsDesk": " ",
             "Alacritty": " ",
-            "class<spotify>": " "
+            "class<spotify>": " ",
+            "class<zen>": " "
 	    },
         "persistent-workspaces": {
             "*": 10,

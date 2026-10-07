@@ -37,12 +37,15 @@ hl.monitor({
 -- Set programs that you use
 local terminal = "alacritty"
 local fileManager = "thunar"
-local menu = "hyprlauncher"
+local menu = "rofi -show drun"
 local browser = "firefox"
 local music = "spotify-launcher"
 local screenshot = "flameshot gui"
 local lock = "hyprlock"
 local notes = "inkdrop"
+local secondary_browser = 'zen-browser'
+local clipboard = 'copyq toggle'
+local cheatsheets = 'cheatsheets'
 
 
 -------------------
@@ -56,6 +59,7 @@ local notes = "inkdrop"
 --
 hl.on("hyprland.start", function () 
   hl.exec_cmd("waybar")
+  hl.exec_cmd("hyprpaper")
 --   hl.exec_cmd(terminal)
 --   hl.exec_cmd("nm-applet")
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
@@ -273,10 +277,13 @@ local closeWindowBind = hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.close()
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(secondary_browser))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(music))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(screenshot))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("bash ~/.dotfiles/cheatsheets/cheatsheets.sh"))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(lock))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(notes))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -374,24 +381,34 @@ hl.window_rule({
     float = true,
 })
 
+hl.window_rule({
+  name = 'keybinds-cheatsheets',
+  match = { class = '^keybinds-cheatsheet$' },
+
+  float = true,
+  size = { 800, 600 },
+
+  move = { "(monitor_w - window_w) / 2", "(monitor_h - window_h) / 2" }
+})
+
 -- ========================================== 
 -- MONITORES 
 -- ==========================================
 
-local laptop = "eDP-1"
-local monitor = "HDMI-A-1"
+local monitor1 = "DP-1"
+local monitor2 = "DP-2"
 
 -- Change focus
-hl.bind(mainMod .. " + comma", hl.dsp.focus({ monitor = laptop }))
-hl.bind(mainMod .. " + period", hl.dsp.focus({ monitor = monitor }))
+hl.bind(mainMod .. " + comma", hl.dsp.focus({ monitor = monitor1 }))
+hl.bind(mainMod .. " + period", hl.dsp.focus({ monitor = monitor2 }))
 
 -- Move windows
 --hl.bind("SUPER + SHIFT + comma", hl.dsp.window.move({ monitor = laptop }))
 --hl.bind("SUPER + SHIFT + period", hl.dsp.window.move({ monitor = monitor }))
 
 -- Move workspaces
-hl.bind(mainMod .. " + SHIFT + comma", hl.dsp.workspace.move({ monitor = laptop }))
-hl.bind(mainMod .. " + SHIFT + period", hl.dsp.workspace.move({ monitor = monitor }))
+hl.bind(mainMod .. " + SHIFT + comma", hl.dsp.workspace.move({ monitor = monitor1 }))
+hl.bind(mainMod .. " + SHIFT + period", hl.dsp.workspace.move({ monitor = monitor2 }))
 
 -- Fullscreen
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))

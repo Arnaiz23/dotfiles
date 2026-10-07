@@ -38,8 +38,8 @@ export EDITOR="nvim"
 
 alias treel="exa --icons --tree -L 1 --git-ignore"
 alias tree="exa --icons --tree --git-ignore"
-alias ls="exa --icons"
-alias la="exa -l -a --icons"
+alias ls="exa --icons always"
+alias la="exa -l -a --icons always"
 alias grep="grep --color"
 alias cat="bat"
 alias gitlog="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
@@ -222,4 +222,4 @@ export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 unset SSH_ASKPASS
 export SSH_ASKPASS_REQUIRE=never
 
-bash "$DOTFILES/scripts/tmux.sh"
+source "$DOTFILES/scripts/tmux.sh"
