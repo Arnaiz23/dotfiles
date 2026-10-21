@@ -120,4 +120,22 @@ symlib() {
   $0 "$@"
 }
 
+rg_folder_count() {
+  unfunction $0
+  source "$ZSH_FUNCTIONS/rg_folder_count.zsh"
+  $0 "$@"
+}
+
+clean_install() {
+  unfunction $0
+  source "$ZSH_FUNCTIONS/clean_install.zsh"
+  $0 "$@"
+}
+
+du_top() {
+  unfunction $0
+  source "$ZSH_FUNCTIONS/du_top.zsh"
+  $0 "$@"
+}
+
 ##############################################################

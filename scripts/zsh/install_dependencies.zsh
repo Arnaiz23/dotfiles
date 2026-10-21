@@ -17,7 +17,7 @@ i() {
 		echo "⏵ Detectando yarn.lock, usando yarn..."
 		yarn install
 	else
-		echo "No se detecto ningún archivo de bloqueo, usando por defecto..."
-		pnpm install
+    echo "No se detecto ningún archivo de bloqueo, usando por defecto (npm)..."
+		npm install
 	fi
 }
