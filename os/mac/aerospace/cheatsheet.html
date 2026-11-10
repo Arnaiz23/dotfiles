@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroSpace Shortcuts Cheatsheet</title>
+  <style>
+    :root {
+      --bg: #161616;
+      --card-bg: #262626;
+      --card-border: #333333;
+      --text: #f2f4f8;
+      --text-muted: #a0a0a0;
+      --accent: #78a9ff;
+      --accent-mode: #ee5396;
+      --accent-service: #33b1ff;
+      --accent-apps: #42be65;
+      --kbd-bg: #1e1e1e;
+      --kbd-border: #3d3d3d;
+      --kbd-text: #ffffff;
+      --kbd-shadow: #121212;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      padding: 24px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .title-area h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .title-area h1 span.logo-badge {
+      background: linear-gradient(135deg, #78a9ff, #be95ff);
+      color: #161616;
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+
+    .title-area p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 8px 14px 8px 34px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      outline: none;
+      width: 230px;
+      transition: all 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+      width: 270px;
+      box-shadow: 0 0 0 2px rgba(120, 169, 255, 0.2);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+
+    .search-hint {
+      position: absolute;
+      right: 10px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      pointer-events: none;
+      background: #1e1e1e;
+      padding: 1px 5px;
+      border-radius: 4px;
+      border: 1px solid var(--card-border);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .card-header {
+      padding: 10px 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-header.main { border-top: 3px solid var(--accent); }
+    .card-header.service { border-top: 3px solid var(--accent-service); }
+    .card-header.apps { border-top: 3px solid var(--accent-apps); }
+    .card-header.workspaces { border-top: 3px solid var(--accent-mode); }
+
+    .tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .tag.main { background: rgba(120, 169, 255, 0.15); color: var(--accent); }
+    .tag.service { background: rgba(51, 177, 255, 0.15); color: var(--accent-service); }
+    .tag.apps { background: rgba(66, 190, 101, 0.15); color: var(--accent-apps); }
+    .tag.workspaces { background: rgba(238, 83, 150, 0.15); color: var(--accent-mode); }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      transition: background-color 0.15s ease;
+    }
+
+    .table tr:last-child {
+      border-bottom: none;
+    }
+
+    .table tr:hover {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .table td {
+      padding: 9px 16px;
+      font-size: 0.86rem;
+    }
+
+    .table td.shortcut {
+      white-space: nowrap;
+      text-align: right;
+      width: 45%;
+    }
+
+    .table td.desc {
+      color: #d1d5db;
+    }
+
+    .shortcut-group {
+      display: inline-flex;
+      gap: 4px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    kbd {
+      display: inline-block;
+      background-color: var(--kbd-bg);
+      border: 1px solid var(--kbd-border);
+      border-bottom-color: var(--kbd-shadow);
+      border-radius: 5px;
+      box-shadow: 0 2px 0 var(--kbd-shadow), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      color: var(--kbd-text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Mono", "Monaco", monospace;
+      font-size: 0.76rem;
+      font-weight: 600;
+      line-height: 1.2;
+      padding: 2px 6px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .comment-note {
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      margin-left: 4px;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 14px;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="title-area">
+      <h1>
+        <span class="logo-badge">AeroSpace</span>
+        Shortcuts Cheatsheet
+      </h1>
+      <p>Quick reference for window management, navigation, and modal controls.</p>
+    </div>
+    <div class="search-container">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search shortcuts..." autofocus>
+      <span class="search-hint">/</span>
+    </div>
+  </header>
+
+  <div class="grid" id="shortcutsGrid">
+
+    <!-- MAIN MODE - NAVIGATION & TILES -->
+    <div class="card">
+      <div class="card-header main">
+        <span>Navigation & Focus</span>
+        <span class="tag main">Main Mode</span>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="desc">Focus Left</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>H</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Focus Down</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>J</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Focus Up</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>K</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Focus Right</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>L</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Move Window Left</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>H</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Move Window Down</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>J</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Move Window Up</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>K</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Move Window Right</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>L</kbd></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MAIN MODE - LAYOUT & RESIZE -->
+    <div class="card">
+      <div class="card-header main">
+        <span>Layout, Resize & Modes</span>
+        <span class="tag main">Main Mode</span>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="desc">Tiles Layout (Horizontal / Vertical)</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>/</kbd> <span class="comment-note">(- on ES)</span></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Accordion Layout (Horizontal / Vertical)</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>,</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Smart Resize Shrink (-50px)</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>-</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Smart Resize Expand (+50px)</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>=</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Enter <strong>Service Mode</strong></td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>,</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Enter <strong>Apps Mode</strong></td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>↵</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Open this <strong>Cheatsheet</strong></td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>/</kbd> <span class="comment-note">(- on ES)</span></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Move Workspace to Next Monitor</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>⇧</kbd><kbd>⇥ Tab</kbd></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SERVICE MODE -->
+    <div class="card">
+      <div class="card-header service">
+        <span>Service Mode</span>
+        <span class="tag service">Trigger: ⌥ ⇧ ,</span>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="desc">Reload Config & Return to Normal</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⎋ Esc</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Reset Layout (Flatten Workspace Tree)</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>R</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Toggle Floating / Tiling Layout</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>F</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Close All Other Windows in Workspace</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌫ Backspace</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Join Window Left / Down / Up / Right</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌥</kbd><kbd>⇧</kbd><kbd>H</kbd><kbd>J</kbd><kbd>K</kbd><kbd>L</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Mute Mic (Volume 0%)</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>M</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Set Mic Volume to 50%</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>N</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Mic Volume +10% / -10%</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>,</kbd> / <kbd>.</kbd></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- APPS MODE -->
+    <div class="card">
+      <div class="card-header apps">
+        <span>Apps Mode</span>
+        <span class="tag apps">Trigger: ⌥ ⇧ ↵</span>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="desc">Exit to Normal Mode</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⎋ Esc</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Toggle Fullscreen</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>F</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Launch / Focus WezTerm</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>T</kbd></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- WORKSPACES -->
+    <div class="card">
+      <div class="card-header workspaces">
+        <span>Workspaces Switching & Moving</span>
+        <span class="tag workspaces">Workspaces</span>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="desc">Switch to Workspace 1 – 7</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>1</kbd> … <kbd>7</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Move Window to Workspace 1 – 7</td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>⇧</kbd><kbd>1</kbd> … <kbd>7</kbd></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Workspace <strong>X</strong> <span class="comment-note">(Scratch / Extra)</span></td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>X</kbd> <span class="comment-note">(+⇧ to move)</span></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Workspace <strong>U</strong></td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>U</kbd> <span class="comment-note">(+⇧ to move)</span></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Workspace <strong>T</strong> <span class="comment-note">(Teams / Slack)</span></td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>T</kbd> <span class="comment-note">(+⇧ to move)</span></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Workspace <strong>G</strong> <span class="comment-note">(iCal Calendar)</span></td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>G</kbd> <span class="comment-note">(+⇧ to move)</span></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Workspace <strong>Q</strong></td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>Q</kbd> <span class="comment-note">(+⇧ to move)</span></div></td>
+          </tr>
+          <tr>
+            <td class="desc">Workspace <strong>M</strong> <span class="comment-note">(Spotify Music)</span></td>
+            <td class="shortcut"><div class="shortcut-group"><kbd>⌃</kbd><kbd>M</kbd> <span class="comment-note">(+⇧ to move)</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- WORKSPACE APP ASSIGNMENTS -->
+    <div class="card">
+      <div class="card-header workspaces">
+        <span>Assigned Apps & Monitors</span>
+        <span class="tag workspaces">Assignments</span>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="desc"><strong>Workspace 1</strong> (Browser)</td>
+            <td class="shortcut"><span style="color: #78a9ff;">Google Chrome</span></td>
+          </tr>
+          <tr>
+            <td class="desc"><strong>Workspace 2</strong> (Notes)</td>
+            <td class="shortcut"><span style="color: #be95ff;">Inkdrop</span></td>
+          </tr>
+          <tr>
+            <td class="desc"><strong>Workspace 3</strong> (Terminal)</td>
+            <td class="shortcut"><span style="color: #42be65;">WezTerm / iTerm2</span> <span class="comment-note">[Main Mon]</span></td>
+          </tr>
+          <tr>
+            <td class="desc"><strong>Workspace 4</strong> (Editor)</td>
+            <td class="shortcut"><span style="color: #33b1ff;">VS Code / Zed</span></td>
+          </tr>
+          <tr>
+            <td class="desc"><strong>Workspace 5</strong></td>
+            <td class="shortcut"><span class="comment-note">[Main Mon]</span></td>
+          </tr>
+          <tr>
+            <td class="desc"><strong>Workspace T</strong> (Chat)</td>
+            <td class="shortcut"><span style="color: #ff7eb6;">Teams / Slack</span> <span class="comment-note">[Built-in]</span></td>
+          </tr>
+          <tr>
+            <td class="desc"><strong>Workspace G</strong> (Calendar)</td>
+            <td class="shortcut"><span style="color: #ee5396;">Apple iCal</span></td>
+          </tr>
+          <tr>
+            <td class="desc"><strong>Workspace M</strong> (Music)</td>
+            <td class="shortcut"><span style="color: #42be65;">Spotify</span> <span class="comment-note">[Built-in]</span></td>
+          </tr>
+          <tr>
+            <td class="desc"><strong>Workspace B</strong></td>
+            <td class="shortcut"><span class="comment-note">[Secondary Mon]</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div id="noResults" class="empty-state hidden">
+    No shortcuts matching "<span id="queryText"></span>"
+  </div>
+
+  <footer>
+    <span>Tip: Press <kbd>Esc</kbd> to close &bull; Press <kbd>/</kbd> to search</span>
+    <span>AeroSpace Config: <code>~/.dotfiles/os/mac/aerospace/aerospace.toml</code></span>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.card');
+    const noResults = document.getElementById('noResults');
+    const queryText = document.getElementById('queryText');
+
+    searchInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      queryText.textContent = q;
+      let totalVisible = 0;
+
+      cards.forEach(card => {
+        const rows = card.querySelectorAll('tbody tr');
+        let cardHasVisibleRow = false;
+
+        rows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          if (text.includes(q)) {
+            row.classList.remove('hidden');
+            cardHasVisibleRow = true;
+          } else {
+            row.classList.add('hidden');
+          }
+        });
+
+        if (cardHasVisibleRow) {
+          card.classList.remove('hidden');
+          totalVisible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (totalVisible === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (document.activeElement === searchInput && searchInput.value !== '') {
+          searchInput.value = '';
+          searchInput.dispatchEvent(new Event('input'));
+        } else {
+          window.close();
+        }
+      }
+
+      if (e.key === '/' && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      }
+    });
+  </script>
+</body>
+</html>

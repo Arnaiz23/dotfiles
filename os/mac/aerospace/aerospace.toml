@@ -160,6 +160,7 @@ ctrl-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-comma = ['mode service', 'exec-and-forget sketchybar --trigger aerospace_enter_service_mode']
 alt-shift-enter = ['mode apps', 'exec-and-forget sketchybar --trigger aerospace_enter_apps_mode']
+alt-shift-slash = '''exec-and-forget open -na "Google Chrome" --args --app="file:///Users/adrian.arnaiz/.dotfiles/os/mac/aerospace/cheatsheet.html"'''
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -184,6 +185,11 @@ ctrl-period = '''exec-and-forget osascript -e "set volume input volume ((input v
 esc = ['mode main', 'exec-and-forget sketchybar --trigger aerospace_enter_normal_mode']
 f = ['fullscreen', 'mode main']
 t = ['exec-and-forget open -n /System/Volumes/Data/Applications/WezTerm.app', 'mode main']
+
+# AeroSpace Cheatsheet - keep floating instead of moving to Workspace 1
+[[on-window-detected]]
+if.window-title-regex-substring = 'AeroSpace Shortcuts Cheatsheet'
+run = 'layout floating'
 
 # WORKSPACE 1
 [[on-window-detected]]
