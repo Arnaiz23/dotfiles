@@ -1,10 +1,12 @@
 # Set zsh
-set-option -g default-shell /usr/bin/zsh
+if-shell "test -x /bin/zsh" "set-option -g default-shell /bin/zsh" "if-shell 'test -x /usr/bin/zsh' 'set-option -g default-shell /usr/bin/zsh' 'if-shell \"test -x /opt/homebrew/bin/zsh\" \"set-option -g default-shell /opt/homebrew/bin/zsh\"'"
 
 # Fix Colors
 set -g default-terminal "screen-256color"
 set -g default-terminal "tmux-256color"
 set -ag terminal-overrides ",xterm-256color:RGB"
+set -g popup-style 'bg=terminal'
+set -g popup-border-style 'fg=colour8,bg=default'
 
 # Don't rename windows automatically
 set-option -g allow-rename off
